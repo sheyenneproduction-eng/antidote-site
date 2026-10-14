@@ -30,12 +30,15 @@ jobs:
           node-version: 20
       - name: Read new videos from the channel
         run: node scripts/update-videos.js
+      - name: Redirect old Podia addresses
+        run: node scripts/make-redirects.js
       - name: Save new videos
         run: |
-          if ! git diff --quiet data.js; then
+          git add -A
+          if ! git diff --cached --quiet; then
             git config user.name "Antidote"
             git config user.email "contact@antidote-thechannel.com"
-            git commit -am "New video from the channel"
+            git commit -m "New video from the channel"
             git push
           fi
       - uses: actions/configure-pages@v5

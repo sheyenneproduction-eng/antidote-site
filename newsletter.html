@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- adresse provisoire : à retirer le jour de la bascule du domaine -->
+<meta name="robots" content="noindex">
 <title>Newsletter · Antidote</title>
 <link rel="stylesheet" href="site.css">
 </head><body>
@@ -10,7 +12,7 @@ var learn = ['Replace motivation with real discipline that sticks', 'Build unsha
 mount('newsletter', '<div class="top"><div class="wrap"><div class="nlp"><div><div class="eyebrow">The newsletter · weekly</div>' +
   '<h1 style="font-size:72px">The newsletter to design a life you don’t want to <em>escape from</em>.</h1>' +
   '<p class="sub">Join thousands of readers who get weekly insights on human behavior, mindset, and strategic living.</p>' +
-  '<form class="field" id="nl" novalidate><input id="nl-email" type="email" placeholder="you@example.com" aria-label="Email address" aria-describedby="nl-err"><button class="btn v sm" type="submit">Sign me up</button></form>' +
+  '<form class="field" id="nl" novalidate method="post" accept-charset="UTF-8" action="' + nlAction() + '"><input id="nl-email" name="email" type="email" placeholder="you@example.com" aria-label="Email address" aria-describedby="nl-err"><button class="btn v sm" type="submit">Sign me up</button></form>' +
   '<p class="err" id="nl-err" role="alert"></p><p class="fine">By signing up, you agree to receive email updates.</p></div>' +
   '<div class="pillars"><div><small>Every week</small>Ruthless strategies you can actually use</div><div><small>Every week</small>The dark truth behind human behavior</div><div><small>Every week</small>Rewire your mindset and take control of your life</div></div></div></div></div>' +
   '<div class="wrap"><section><div class="row-h"><h2>What each email does</h2></div><p class="desc">Each email breaks down timeless lessons from psychology, philosophy, and the world’s most powerful thinkers, so you can master yourself, understand others, and make smarter moves in life, business, and relationships.</p></section>' +
@@ -19,10 +21,9 @@ mount('newsletter', '<div class="top"><div class="wrap"><div class="nlp"><div><d
 var f = document.getElementById('nl'), inp = document.getElementById('nl-email'), err = document.getElementById('nl-err');
 inp.addEventListener('input', function () { err.textContent = ''; });
 f.addEventListener('submit', function (e) {
-  e.preventDefault(); var v = inp.value.trim();
-  if (!v) { err.textContent = 'Enter your email address first.'; inp.focus(); return; }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { err.textContent = 'That email doesn’t look right. Check for a typo.'; inp.focus(); return; }
-  /* en attendant le choix de l'outil d'e-mail : l'inscription se termine sur la page Podia */
-  window.open(PODIA + 'newsletter', '_blank', 'noopener');
+  var v = inp.value.trim();
+  if (!v) { e.preventDefault(); err.textContent = 'Enter your email address first.'; inp.focus(); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { e.preventDefault(); err.textContent = 'That email doesn’t look right. Check for a typo.'; inp.focus(); return; }
+  /* adresse valide : le formulaire part chez Podia, qui envoie l'e-mail de confirmation */
 });
 </script></body></html>

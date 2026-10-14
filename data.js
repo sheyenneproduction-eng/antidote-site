@@ -196,7 +196,8 @@ var P=[
    "Free updates included",
    "Step-by-step PDF guides"
   ],
-  "sn": "The Goals OS"
+  "sn": "The Goals OS",
+  "o": 4848668
  },
  {
   "s": "money-mastery-system",
@@ -242,7 +243,8 @@ var P=[
    "Free updates included",
    "Step-by-step video tutorial + PDF guide"
   ],
-  "sn": "Money Mastery"
+  "sn": "Money Mastery",
+  "o": 3256618
  },
  {
   "s": "12-week-year",
@@ -273,7 +275,8 @@ var P=[
    "Free updates",
    "Step-by-step PDF guide"
   ],
-  "sn": "The 12-Week Year"
+  "sn": "The 12-Week Year",
+  "o": 2807043
  },
  {
   "s": "habits-dashboard",
@@ -315,7 +318,8 @@ var P=[
   "inc": [
    "Step-by-step PDF tutorial"
   ],
-  "sn": "Habits Dashboard"
+  "sn": "Habits Dashboard",
+  "o": 4334435
  },
  {
   "s": "never-split-the-difference",
@@ -333,7 +337,8 @@ var P=[
    "Learn the FBI techniques that replace them: mirroring, labeling, calibrated questions, and no-oriented questions",
    "Know exactly what to say, with “instead of / say this” examples for each situation",
    "Handle numbers with confidence: deadlines, anchoring, fairness, and the Ackerman model"
-  ]
+  ],
+  "o": 6626186
  },
  {
   "s": "the-art-of-war",
@@ -351,7 +356,8 @@ var P=[
    "Learn how to prepare, position yourself, and shape conditions in your favor",
    "Recognize when to act, wait, adapt, negotiate, or walk away",
    "Apply Sun Tzu’s strategies through practical examples, decision tools, and warning signs"
-  ]
+  ],
+  "o": 5986642
  },
  {
   "s": "secrets-of-the-millionaire-mind",
@@ -369,7 +375,8 @@ var P=[
    "Discover the 17 wealth principles from the book",
    "See the difference between a limited money mindset and a wealth-building mindset",
    "Identify which part of your money blueprint needs the most attention"
-  ]
+  ],
+  "o": 5836954
  },
  {
   "s": "the-7-habits",
@@ -388,7 +395,8 @@ var P=[
    "Build strong, trust-based relationships",
    "Improve your focus and productivity",
    "Create sustainable habits for long-term growth"
-  ]
+  ],
+  "o": 5699898
  },
  {
   "s": "the-mountain-is-you",
@@ -405,7 +413,8 @@ var P=[
    "A simple breakdown of the emotional roots behind self-sabotage (fear, unmet needs, old identities, and protective patterns)",
    "Practical tools to decode your emotions, build self-trust, regulate your reactions, and choose actions aligned with your future self",
    "Guided exercises to rewrite limiting beliefs, track sabotage loops, and create the strong internal foundation the book teaches"
-  ]
+  ],
+  "o": 4787094
  },
  {
   "s": "thinking-fast-and-slow",
@@ -422,7 +431,8 @@ var P=[
    "A simple breakdown of each mental trap, with its definition and key experiment",
    "Real-world examples that show how these traps influence money, work, and daily life",
    "Practical insights on how to recognize and avoid these thinking errors"
-  ]
+  ],
+  "o": 4522511
  },
  {
   "s": "think-and-grow-rich",
@@ -439,7 +449,8 @@ var P=[
    "Define exactly what you want",
    "Turn knowledge, imagination, and planning into practical results",
    "Build persistence and overcome the fears that hold you back"
-  ]
+  ],
+  "o": 4432876
  },
  {
   "s": "the-prince",
@@ -456,7 +467,8 @@ var P=[
    "See the world as it is (not as you wish it to be)",
    "Master the art of decisive, calculated action",
    "Build unshakable power that commands respect"
-  ]
+  ],
+  "o": 4316851
  },
  {
   "s": "the-48-laws-of-power",
@@ -484,7 +496,8 @@ var P=[
    "Aggression & Domination",
    "Adaptability & Evolution"
   ],
-  "inside": "A step-by-step breakdown of each law, with real-life applications, reflective questions, and actionable exercises. Strategic mind maps sort the 48 laws into 6 power categories:"
+  "inside": "A step-by-step breakdown of each law, with real-life applications, reflective questions, and actionable exercises. Strategic mind maps sort the 48 laws into 6 power categories:",
+  "o": 2971410
  },
  {
   "s": "the-power-of-habit",
@@ -501,7 +514,8 @@ var P=[
    "Learn how habits work and why they shape your daily actions",
    "Identify triggers and rewards to reshape your routines",
    "Develop keystone habits that drive long-lasting transformation in every area of your life"
-  ]
+  ],
+  "o": 2740115
  },
  {
   "s": "the-33-strategies-of-war",
@@ -519,7 +533,8 @@ var P=[
    "Build discipline and focus to stay ahead",
    "Adopt a growth mindset to excel in any competitive situation"
   ],
-  "cover": "Il7EEz2o2Wg"
+  "cover": "Il7EEz2o2Wg",
+  "o": 2638080
  },
  {
   "s": "mastery",
@@ -536,7 +551,8 @@ var P=[
    "Embrace the proven path from dabbler to master",
    "Cultivate resilience and creativity through focused practice",
    "Harness your unique potential to make a lasting impact in your domain"
-  ]
+  ],
+  "o": 2515942
  },
  {
   "s": "the-art-of-seduction",
@@ -554,7 +570,8 @@ var P=[
    "Harness the psychology of desire",
    "Build lasting influence in both personal and professional relationships"
   ],
-  "cover": "TstkLVLXuGA"
+  "cover": "TstkLVLXuGA",
+  "o": 2481772
  },
  {
   "s": "the-subtle-art",
@@ -571,7 +588,8 @@ var P=[
    "Discover how to focus on what truly matters",
    "Embrace challenges",
    "Build a mindset for success"
-  ]
+  ],
+  "o": 2480246
  },
  {
   "s": "the-laws-of-human-nature",
@@ -589,7 +607,8 @@ var P=[
    "Master emotional control for greater resilience",
    "Build stronger, more authentic relationships",
    "Challenge your biases and develop true self-awareness"
-  ]
+  ],
+  "o": 2608186
  },
  {
   "s": "master-the-art-of-human-behavior",
@@ -613,7 +632,8 @@ var P=[
    "Self-paced: linear, non-linear, or express paths (Goal Focus, Self-Control, Social Mastery)",
    "Bonus mind map: 18 Laws at a Glance",
    "Bonus blueprint: The Laws of Human Nature by Robert Greene"
-  ]
+  ],
+  "o": 2522838
  },
  {
   "s": "how-to-win-friends",
@@ -639,6 +659,7 @@ var P=[
     "Built-in accountability",
     "New challenges unlock daily, building habit, momentum, and confidence over time."
    ]
-  ]
+  ],
+  "o": 3124124
  }
 ];

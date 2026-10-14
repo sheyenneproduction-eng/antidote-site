@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- adresse provisoire : à retirer le jour de la bascule du domaine -->
+<meta name="robots" content="noindex">
 <title>Product · Antidote</title>
 <link rel="stylesheet" href="site.css">
 </head><body>
@@ -28,7 +30,7 @@ mount('', '<div class="top"><div class="wrap"><nav class="crumbs" aria-label="Br
   '<div class="block"><h2>' + esc(p.lt) + '</h2><ul class="ticks">' + p.l.map(li).join('') + '</ul></div>' +
   (p.cur ? '<div class="block"><h2>Multi-currency support</h2><div class="chips">' + p.cur.map(function (c) { return '<span>' + c + '</span>'; }).join('') + '</div></div>' : '') +
   '</div><aside><div class="buy"><div class="kk">' + (p.pr ? 'One-time price' : 'Price') + '</div><div class="big-pr">' + money(p.pr) + '</div>' +
-  '<a class="btn v wide" href="' + PODIA + p.u + '"' + EXT + '>' + (p.pr ? 'Buy for ' + money(p.pr) : 'Get it free') + '</a>' +
+  '<a class="btn v wide" href="' + buyUrl(p) + '">' + (p.pr ? 'Buy for ' + money(p.pr) : 'Get it free') + '</a>' +
   (p.inc ? '<ul>' + p.inc.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul>' : '') + '</div>' +
   (vs.length ? '<div class="seen"><div class="kk">On the channel</div>' + vs.map(function (x) { return '<a class="v" href="' + watch(x.id) + '"' + EXT + '><div class="th"><img src="' + thumb(x.id) + '" alt=""></div><div><b>' + esc(x.t) + '</b><span>Watch the summary →</span></div></a>'; }).join('') + '</div>' : '') +
   '</aside></div>' +

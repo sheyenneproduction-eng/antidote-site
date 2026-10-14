@@ -10,6 +10,10 @@ function thumb(id) { return 'https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg
 function watch(id) { return 'https://www.youtube.com/watch?v=' + id; }
 function money(n) { return n ? '$' + n.toFixed(2) : 'Free'; }
 function bySlug(s) { for (var i = 0; i < P.length; i++) if (P[i].s === s) return P[i]; return null; }
+/* le paiement direct Podia, sans passer par sa page produit */
+function buyUrl(p) { return PODIA + p.u + (p.o ? '/buy?offer_id=' + p.o : ''); }
+/* le formulaire d'inscription intégrable fourni par Podia (Réglages > Email > Embedded email form) */
+function nlAction() { return PODIA + 'email_lists/909271/subscriptions'; }
 function productUrl(p) { return 'product.html?p=' + p.s; }
 /* la vidéo du livre d'un produit, quand elle existe (les systèmes en ont plusieurs) */
 function videosFor(p) { var key = p.vid || p.s; return VIDEOS.filter(function (v) { return v.p === key; }); }
@@ -73,7 +77,7 @@ function systemCards() {
 
 function newsletterBand() {
   return '<div class="nl"><div><h2>Design a life you don’t want to escape from.</h2><p>1 email a week on human behavior, mindset, and strategic living.</p></div>' +
-    '<a class="btn v" href="newsletter.html">Sign me up</a></div>';
+    '<form class="field" method="post" action="' + nlAction() + '" accept-charset="UTF-8"><input type="email" name="email" required placeholder="you@example.com" aria-label="Email address"><button class="btn v sm" type="submit">Sign me up</button></form></div>';
 }
 
 function mount(current, html) {
