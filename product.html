@@ -16,7 +16,7 @@ function first3() { return p.l.slice(0, 3).map(function (x) { return '<li>' + es
 var visual = v
   ? '<div class="pair"><span class="step s1">1 · Watch it</span><a class="th" href="' + watch(v.id) + '"' + EXT + '><img src="' + thumb(v.id) + '" alt="Watch the summary on YouTube"></a>' +
     '<div class="bp"><span class="step">2 · Use it</span><small>' + esc(slipLabel(p)) + '</small><h3>' + esc(p.t) + '</h3><ul>' + first3() + '</ul></div></div>'
-  : poster(p, P.indexOf(p), 'big');
+  : p.img ? '<div class="cover-img"><img src="' + p.img + '" alt=""></div>' : poster(p, P.indexOf(p), 'big');
 var also = p.c === 'systems'
   ? '<div class="sys" style="grid-template-columns:repeat(3,1fr)">' + P.filter(function (o) { return o.c === 'systems' && o.s !== p.s; }).map(function (o) {
       return '<a class="s" href="' + productUrl(o) + '"><span class="kk">' + esc(o.k) + '</span><h3 style="font-size:30px">' + esc(o.sn) + '</h3><p>' + esc(o.h) + '</p><div class="f"><span class="pr">' + money(o.pr) + '</span><span class="btn sm g">' + (o.pr ? 'See inside' : 'Get it free') + '</span></div></a>';

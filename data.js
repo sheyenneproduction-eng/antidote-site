@@ -515,7 +515,8 @@ var P=[
    "Identify triggers and rewards to reshape your routines",
    "Develop keystone habits that drive long-lasting transformation in every area of your life"
   ],
-  "o": 2740115
+  "o": 2740115,
+  "img": "assets/the-power-of-habit.png"
  },
  {
   "s": "the-33-strategies-of-war",

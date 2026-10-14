@@ -17,7 +17,7 @@ mount('newsletter', '<div class="top"><div class="wrap"><div class="nlp"><div><d
   '<div class="pillars"><div><small>Every week</small>Ruthless strategies you can actually use</div><div><small>Every week</small>The dark truth behind human behavior</div><div><small>Every week</small>Rewire your mindset and take control of your life</div></div></div></div></div>' +
   '<div class="wrap"><section><div class="row-h"><h2>What each email does</h2></div><p class="desc">Each email breaks down timeless lessons from psychology, philosophy, and the world’s most powerful thinkers, so you can master yourself, understand others, and make smarter moves in life, business, and relationships.</p></section>' +
   '<section><div class="row-h"><h2>You’ll learn to</h2></div><ul class="ticks learn" style="max-width:none">' + learn.map(function (x) { return '<li><div>' + esc(x) + '</div></li>'; }).join('') + '</ul>' +
-  '<p class="closer">No fluff. No filler. <em style="font-style:normal;color:var(--v2)">Just what actually works.</em></p></section></div>');
+  '<p class="closer">1 email a week. <em style="font-style:normal;color:var(--v2)">Unsubscribe anytime.</em></p></section></div>');
 var f = document.getElementById('nl'), inp = document.getElementById('nl-email'), err = document.getElementById('nl-err');
 inp.addEventListener('input', function () { err.textContent = ''; });
 f.addEventListener('submit', function (e) {

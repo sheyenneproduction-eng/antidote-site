@@ -37,9 +37,16 @@ function nav(current) {
     '<div class="menu" id="sw-m" hidden><small>Switch to</small>' +
     '<a class="mi on" href="index.html"><i class="dot"></i><div><b>Antidote</b><span>Book summaries, systems, and blueprints</span></div><em>✓</em></a>' +
     '<a class="mi" href="' + SHORTYEAR + '"><i class="dot sy"></i><div><b>Shortyear</b><span>The app that turns a year into 12 weeks</span></div><em>→</em></a></div></div>';
+  var items = L.map(function (l) { return '<a href="' + l[2] + '"' + (l[0] === current ? ' aria-current="page"' : '') + '>' + l[1] + '</a>'; }).join('');
+  var login = PODIA + 'account/sessions/new';
+  /* sur téléphone : A = bouton menu qui ouvre un panneau plein écran, B = rangée de liens sous le logo (en attente du choix de Sheyenne) */
   return '<header class="nav"><div class="wrap">' + logo +
-    '<nav class="links" aria-label="Main">' + L.map(function (l) { return '<a href="' + l[2] + '"' + (l[0] === current ? ' aria-current="page"' : '') + '>' + l[1] + '</a>'; }).join('') + '</nav>' +
-    '<div class="right"><a class="btn v sm" href="' + PODIA + 'account/sessions/new"' + EXT + '>Log in</a><a class="btn sm" href="library.html">Browse the library</a></div></div></header>';
+    '<nav class="links" aria-label="Main">' + items + '</nav>' +
+    '<div class="right"><a class="btn v sm" href="' + login + '"' + EXT + '>Log in</a><a class="btn sm" href="library.html">Browse the library</a></div>' +
+    '<button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mpanel"><i></i><i></i><i></i></button></div>' +
+    '<nav class="mlinks" aria-label="Main">' + items + '</nav></header>' +
+    '<div class="mpanel" id="mpanel" hidden><nav aria-label="Main">' + items + '</nav>' +
+    '<div class="mp-cta"><a class="btn v" href="' + login + '"' + EXT + '>Log in</a><a class="btn" href="library.html">Browse the library</a></div></div>';
 }
 
 function footer() {
@@ -63,7 +70,7 @@ function poster(p, i, cls) {
 function productCard(p, i) {
   var v = coverVideo(p);
   return '<article class="k" data-c="' + p.c + '"><a href="' + productUrl(p) + '" aria-label="' + esc(p.t) + '">' +
-    (v ? '<div class="th"><img src="' + thumb(v.id) + '" alt="" loading="lazy"></div>' : poster(p, i)) + '</a>' +
+    (v ? '<div class="th"><img src="' + thumb(v.id) + '" alt="" loading="lazy"></div>' : p.img ? '<div class="th"><img src="' + p.img + '" alt="" loading="lazy"></div>' : poster(p, i)) + '</a>' +
     '<a class="slip" href="' + productUrl(p) + '">' + esc(slipLabel(p)) + ' →</a>' +
     '<h3><a href="' + productUrl(p) + '">' + esc(p.t) + '</a></h3><p>' + esc(p.by) + '</p></article>';
 }
@@ -82,7 +89,16 @@ function newsletterBand() {
 
 function mount(current, html) {
   var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = FONTS; document.head.appendChild(l);
+  document.documentElement.setAttribute('data-menu', /menu=b/.test(location.search) ? 'b' : 'a');
   document.body.innerHTML = nav(current) + html + footer();
+  var bg = document.getElementById('burger'), mp = document.getElementById('mpanel');
+  function setMenu(open) {
+    mp.hidden = !open; bg.setAttribute('aria-expanded', String(open)); bg.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.documentElement.classList.toggle('menu-open', open);
+  }
+  bg.addEventListener('click', function () { setMenu(mp.hidden); });
+  mp.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !mp.hidden) { setMenu(false); bg.focus(); } });
   var b = document.getElementById('sw-b'), m = document.getElementById('sw-m');
   if (m) {
   b.addEventListener('click', function (e) { e.stopPropagation(); m.hidden = !m.hidden; b.setAttribute('aria-expanded', String(!m.hidden)); });

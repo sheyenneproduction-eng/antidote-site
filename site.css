@@ -130,6 +130,8 @@ section{padding-top:88px}
 .prod .visual .pair{height:470px;max-width:760px}
 .prod .visual .big{aspect-ratio:16/8;border-radius:22px;max-width:760px}
 .prod .visual .big b{font-size:84px}
+.cover-img{max-width:760px;aspect-ratio:16/9;border-radius:22px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.6)}
+.cover-img img{width:100%;height:100%;object-fit:cover;display:block}
 .desc{font-size:19px;line-height:1.6;color:#DAD6E6;max-width:60ch;margin:0}
 .block{margin-top:48px}
 .block h2{font-size:30px;letter-spacing:-.03em;margin-bottom:18px}
@@ -211,6 +213,29 @@ footer a:hover{color:var(--tx)}
   .prod .visual .big b{font-size:44px}
   .closer{font-size:30px}
   .nl h2{font-size:30px}
+}
+/* menu téléphone */
+.burger,.mlinks,.mpanel{display:none}
+.burger{width:44px;height:44px;border:0;border-radius:12px;cursor:pointer;margin-left:auto;place-content:center;gap:5px;background:rgba(8,7,12,.72);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16);position:relative;z-index:60}
+.burger i{display:block;width:18px;height:2px;border-radius:2px;background:var(--tx);transition:transform .2s ease,opacity .2s ease}
+.menu-open .burger i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-open .burger i:nth-child(2){opacity:0}
+.menu-open .burger i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mpanel{position:fixed;inset:0;z-index:50;padding:110px 24px 40px;flex-direction:column;background:radial-gradient(80% 50% at 20% 0%,rgba(139,108,255,.3),transparent 70%),rgba(8,7,12,.98)}
+.mpanel nav{display:grid;gap:6px}
+.mpanel nav a{font:800 44px/1.15 var(--disp);letter-spacing:-.04em}
+.mpanel nav a[aria-current]{color:var(--v2)}
+.mp-cta{margin-top:auto;display:grid;gap:12px}
+.menu-open,.menu-open body{overflow:hidden}
+.mlinks{gap:8px;overflow-x:auto;padding:0 20px 10px;scrollbar-width:none}
+.mlinks::-webkit-scrollbar{display:none}
+.mlinks a{flex:none;padding:9px 16px;border-radius:999px;font:600 14.5px var(--body);background:rgba(8,7,12,.72);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
+.mlinks a[aria-current]{background:var(--v);box-shadow:none}
+@media (max-width:1000px){
+  [data-menu=a] .burger{display:grid}
+  [data-menu=a] .right{display:none!important}
+  .mpanel:not([hidden]){display:flex}
+  [data-menu=b] .mlinks{display:flex}
 }
 @media (prefers-reduced-motion:no-preference){
   .k .th,.k .poster,.slip{transition:transform .25s ease}
