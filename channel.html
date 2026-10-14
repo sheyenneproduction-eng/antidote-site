@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Videos · Antidote</title>
+<link rel="stylesheet" href="site.css">
+</head><body>
+<script src="data.js"></script><script src="site.js"></script>
+<script>
+var f = VIDEOS[0];
+mount('channel', '<div class="hero"><img src="' + thumb(f.id) + '" alt=""><div class="wrap">' +
+  '<div class="eyebrow">The channel</div>' +
+  '<h1>Animated book summaries. 1 book a month.</h1>' +
+  '<p class="sub">Every video takes one book apart, fully animated. Most of them have a blueprint waiting in the library.</p>' +
+  '<div class="cta"><a class="btn v" href="' + YT_SUB + '"' + EXT + '>' + PLAY + 'Subscribe on YouTube</a><a class="btn g" href="library.html#blueprints">Browse the blueprints</a></div></div></div>' +
+  '<div class="wrap"><section><div class="row-h"><h2>Latest videos</h2><a class="more" href="' + YT_SUB + '"' + EXT + '>All videos on YouTube →</a></div><div class="g1">' + VIDEOS.map(videoCard).join('') + '</div></section>' +
+  newsletterBand() + '</div>');
+</script></body></html>

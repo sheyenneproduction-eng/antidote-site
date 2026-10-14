@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product · Antidote</title>
+<link rel="stylesheet" href="site.css">
+</head><body>
+<script src="data.js"></script><script src="site.js"></script>
+<script>
+var slug = (location.search.match(/p=([\w-]+)/) || [])[1], p = bySlug(slug) || P[0], vs = videosFor(p), v = coverVideo(p);
+var CAT = { systems: 'Systems', blueprints: 'Blueprints', challenges: 'Challenges' };
+document.title = p.t + ' · Antidote';
+function li(x) { return Array.isArray(x) ? '<li><div><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></div></li>' : '<li><div>' + esc(x) + '</div></li>'; }
+function first3() { return p.l.slice(0, 3).map(function (x) { return '<li>' + esc(Array.isArray(x) ? x[0] : x) + '</li>'; }).join(''); }
+var visual = v
+  ? '<div class="pair"><span class="step s1">1 · Watch it</span><a class="th" href="' + watch(v.id) + '"' + EXT + '><img src="' + thumb(v.id) + '" alt="Watch the summary on YouTube"></a>' +
+    '<div class="bp"><span class="step">2 · Use it</span><small>' + esc(slipLabel(p)) + '</small><h3>' + esc(p.t) + '</h3><ul>' + first3() + '</ul></div></div>'
+  : poster(p, P.indexOf(p), 'big');
+var also = p.c === 'systems'
+  ? '<div class="sys" style="grid-template-columns:repeat(3,1fr)">' + P.filter(function (o) { return o.c === 'systems' && o.s !== p.s; }).map(function (o) {
+      return '<a class="s" href="' + productUrl(o) + '"><span class="kk">' + esc(o.k) + '</span><h3 style="font-size:30px">' + esc(o.sn) + '</h3><p>' + esc(o.h) + '</p><div class="f"><span class="pr">' + money(o.pr) + '</span><span class="btn sm g">' + (o.pr ? 'See inside' : 'Get it free') + '</span></div></a>';
+    }).join('') + '</div>'
+  : '<div class="g1">' + P.filter(function (o) { return o.c === p.c && o.s !== p.s; }).slice(0, 3).map(productCard).join('') + '</div>';
+mount('', '<div class="top"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="library.html">Library</a><span>/</span><a href="library.html#' + (p.c === 'systems' ? 'systems' : 'blueprints') + '">' + CAT[p.c] + '</a></nav>' +
+  '<div class="eyebrow" style="margin-top:26px">' + esc(p.k) + '</div><h1>' + esc(p.t) + '</h1><p class="sub">' + esc(p.by) + '</p></div></div>' +
+  '<div class="wrap"><div class="prod"><div><div class="visual">' + visual + '</div>' +
+  '<p class="desc">' + esc(p.d) + '</p>' +
+  (p.inside ? '<div class="block"><h2>Inside this blueprint</h2><p class="desc" style="font-size:17px;margin-bottom:16px">' + esc(p.inside) + '</p><div class="chips">' + p.cats.map(function (c) { return '<span>' + esc(c) + '</span>'; }).join('') + '</div></div>' : '') +
+  '<div class="block"><h2>' + esc(p.lt) + '</h2><ul class="ticks">' + p.l.map(li).join('') + '</ul></div>' +
+  (p.cur ? '<div class="block"><h2>Multi-currency support</h2><div class="chips">' + p.cur.map(function (c) { return '<span>' + c + '</span>'; }).join('') + '</div></div>' : '') +
+  '</div><aside><div class="buy"><div class="kk">' + (p.pr ? 'One-time price' : 'Price') + '</div><div class="big-pr">' + money(p.pr) + '</div>' +
+  '<a class="btn v wide" href="' + PODIA + p.u + '"' + EXT + '>' + (p.pr ? 'Buy for ' + money(p.pr) : 'Get it free') + '</a>' +
+  (p.inc ? '<ul>' + p.inc.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul>' : '') + '</div>' +
+  (vs.length ? '<div class="seen"><div class="kk">On the channel</div>' + vs.map(function (x) { return '<a class="v" href="' + watch(x.id) + '"' + EXT + '><div class="th"><img src="' + thumb(x.id) + '" alt=""></div><div><b>' + esc(x.t) + '</b><span>Watch the summary →</span></div></a>'; }).join('') + '</div>' : '') +
+  '</aside></div>' +
+  '<section><div class="row-h"><h2>You might also like</h2><a class="more" href="library.html">See all →</a></div>' + also + '</section></div>');
+</script></body></html>
