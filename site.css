@@ -158,6 +158,9 @@ section{padding-top:88px}
 .nlp{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;padding-bottom:16px}
 .nlp .field{max-width:480px;margin-top:32px}
 .nlp .field input{flex:1}
+.nl-ok{margin:28px 0 0;max-width:480px;padding:16px 20px;border-radius:16px;background:rgba(139,108,255,.16);box-shadow:inset 0 0 0 1px rgba(139,108,255,.45);font-size:16px;color:var(--tx)}
+.nl-ok b{color:var(--v2)}
+.nl .err{margin-top:8px}
 .fine{font-size:13.5px;color:var(--tx3);margin:12px 0 0}
 .err{min-height:20px;margin:10px 0 0;font-size:14px;color:#FF8F85}
 .pillars{position:relative;height:440px}

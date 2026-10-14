@@ -84,7 +84,33 @@ function systemCards() {
 
 function newsletterBand() {
   return '<div class="nl"><div><h2>Design a life you don’t want to escape from.</h2><p>1 email a week on human behavior, mindset, and strategic living.</p></div>' +
-    '<form class="field" method="post" action="' + nlAction() + '" accept-charset="UTF-8"><input type="email" name="email" required placeholder="you@example.com" aria-label="Email address"><button class="btn v sm" type="submit">Sign me up</button></form></div>';
+    '<form class="field" novalidate method="post" action="' + nlAction() + '" accept-charset="UTF-8"><input type="email" name="email" placeholder="you@example.com" aria-label="Email address"><button class="btn v sm" type="submit">Sign me up</button></form></div>';
+}
+
+/* l'inscription part chez Podia dans un cadre invisible : le visiteur reste sur le site et voit un message à la place du formulaire */
+function wireNewsletterForms() {
+  var forms = document.querySelectorAll('form[action*="email_lists"]');
+  if (!forms.length) return;
+  var sink = document.createElement('iframe');
+  sink.name = 'nl-sink'; sink.title = 'Newsletter sign-up'; sink.hidden = true; sink.tabIndex = -1;
+  document.body.appendChild(sink);
+  [].forEach.call(forms, function (f) {
+    f.target = 'nl-sink';
+    var inp = f.querySelector('input[type=email]');
+    var err = f.parentNode.querySelector('.err');
+    if (!err) { err = document.createElement('p'); err.className = 'err'; err.setAttribute('role', 'alert'); f.insertAdjacentElement('afterend', err); }
+    inp.addEventListener('input', function () { err.textContent = ''; });
+    f.addEventListener('submit', function (e) {
+      var v = inp.value.trim();
+      if (!v) { e.preventDefault(); err.textContent = 'Enter your email address first.'; inp.focus(); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { e.preventDefault(); err.textContent = 'That email doesn’t look right. Check for a typo.'; inp.focus(); return; }
+      setTimeout(function () {
+        var ok = document.createElement('p'); ok.className = 'nl-ok'; ok.setAttribute('role', 'status');
+        ok.innerHTML = '<b>Almost there.</b> Check your inbox and confirm your email to get the next issue.';
+        f.replaceWith(ok); err.textContent = '';
+      }, 0);
+    });
+  });
 }
 
 function mount(current, html) {
@@ -104,6 +130,7 @@ function mount(current, html) {
   document.addEventListener('click', function (e) { if (!m.hidden && !m.contains(e.target)) { m.hidden = true; b.setAttribute('aria-expanded', 'false'); } });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !m.hidden) { m.hidden = true; b.setAttribute('aria-expanded', 'false'); b.focus(); } });
   }
+  wireNewsletterForms();
   /* hauteur de page, lue par le script de capture */
   window.addEventListener('load', function () { setTimeout(function () { var d = document.documentElement; d.setAttribute('data-h', d.scrollHeight); d.setAttribute('data-w', d.scrollWidth); }, 300); });
 }

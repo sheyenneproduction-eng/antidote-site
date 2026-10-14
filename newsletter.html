@@ -4,9 +4,9 @@
 <!-- adresse provisoire : à retirer le jour de la bascule du domaine -->
 <meta name="robots" content="noindex">
 <title>Newsletter · Antidote</title>
-<link rel="stylesheet" href="site.css?v=9">
+<link rel="stylesheet" href="site.css?v=10">
 </head><body>
-<script src="data.js?v=9"></script><script src="site.js?v=9"></script>
+<script src="data.js?v=10"></script><script src="site.js?v=10"></script>
 <script>
 var learn = ['Replace motivation with real discipline that sticks', 'Build unshakable focus, clarity, and discipline under pressure', 'Think about money like an investor, not a consumer', 'Spot the hidden psychological traps sabotaging your choices', 'Rewire your habits using the same patterns high performers use', 'Influence others with proven psychological principles', 'Decode human behavior with iconic experiments like the Milgram obedience study'];
 mount('newsletter', '<div class="top"><div class="wrap"><div class="nlp"><div><div class="eyebrow">The newsletter · weekly</div>' +
@@ -18,12 +18,4 @@ mount('newsletter', '<div class="top"><div class="wrap"><div class="nlp"><div><d
   '<div class="wrap"><section><div class="row-h"><h2>What each email does</h2></div><p class="desc">Each email breaks down timeless lessons from psychology, philosophy, and the world’s most powerful thinkers, so you can master yourself, understand others, and make smarter moves in life, business, and relationships.</p></section>' +
   '<section><div class="row-h"><h2>You’ll learn to</h2></div><ul class="ticks learn" style="max-width:none">' + learn.map(function (x) { return '<li><div>' + esc(x) + '</div></li>'; }).join('') + '</ul>' +
   '<p class="closer">1 email a week. <em style="font-style:normal;color:var(--v2)">Unsubscribe anytime.</em></p></section></div>');
-var f = document.getElementById('nl'), inp = document.getElementById('nl-email'), err = document.getElementById('nl-err');
-inp.addEventListener('input', function () { err.textContent = ''; });
-f.addEventListener('submit', function (e) {
-  var v = inp.value.trim();
-  if (!v) { e.preventDefault(); err.textContent = 'Enter your email address first.'; inp.focus(); return; }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { e.preventDefault(); err.textContent = 'That email doesn’t look right. Check for a typo.'; inp.focus(); return; }
-  /* adresse valide : le formulaire part chez Podia, qui envoie l'e-mail de confirmation */
-});
 </script></body></html>
