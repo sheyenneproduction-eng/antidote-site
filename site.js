@@ -43,7 +43,7 @@ function nav(current) {
   return '<header class="nav"><div class="wrap">' + logo +
     '<nav class="links" aria-label="Main">' + items + '</nav>' +
     '<div class="right"><a class="btn v sm" href="' + login + '"' + EXT + '>Log in</a><a class="btn sm" href="library.html">Browse the library</a></div>' +
-    '<button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mpanel"><i></i><i></i><i></i></button></div>' +
+    '<button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mpanel"><svg class="ic-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>' +
     '<nav class="mlinks" aria-label="Main">' + items + '</nav></header>' +
     '<div class="mpanel" id="mpanel" hidden><nav aria-label="Main">' + items + '</nav>' +
     '<div class="mp-cta"><a class="btn v" href="' + login + '"' + EXT + '>Log in</a><a class="btn" href="library.html">Browse the library</a></div></div>';
