@@ -39,7 +39,7 @@ function nav(current) {
     '<a class="mi" href="' + SHORTYEAR + '"><i class="dot sy"></i><div><b>Shortyear</b><span>The app that turns a year into 12 weeks</span></div><em>→</em></a></div></div>';
   return '<header class="nav"><div class="wrap">' + logo +
     '<nav class="links" aria-label="Main">' + L.map(function (l) { return '<a href="' + l[2] + '"' + (l[0] === current ? ' aria-current="page"' : '') + '>' + l[1] + '</a>'; }).join('') + '</nav>' +
-    '<div class="right"><a href="' + PODIA + 'account/sessions/new"' + EXT + '>Log in</a><a class="btn sm" href="library.html">Browse the library</a></div></div></header>';
+    '<div class="right"><a class="btn v sm" href="' + PODIA + 'account/sessions/new"' + EXT + '>Log in</a><a class="btn sm" href="library.html">Browse the library</a></div></div></header>';
 }
 
 function footer() {
