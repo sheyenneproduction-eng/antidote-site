@@ -86,5 +86,5 @@ function mount(current, html) {
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !m.hidden) { m.hidden = true; b.setAttribute('aria-expanded', 'false'); b.focus(); } });
   }
   /* hauteur de page, lue par le script de capture */
-  window.addEventListener('load', function () { setTimeout(function () { document.documentElement.setAttribute('data-h', document.documentElement.scrollHeight); }, 300); });
+  window.addEventListener('load', function () { setTimeout(function () { var d = document.documentElement; d.setAttribute('data-h', d.scrollHeight); d.setAttribute('data-w', d.scrollWidth); }, 300); });
 }

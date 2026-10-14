@@ -173,21 +173,44 @@ footer nav{display:flex;gap:22px}
 footer a:hover{color:var(--tx)}
 
 @media (max-width:1000px){
+  html,body{overflow-x:clip}
   .wrap{padding-inline:20px}
   .links{display:none}
   h1,.top h1{font-size:54px}
+  .nlp h1{font-size:48px!important}
   h2{font-size:38px}
   .hero{height:auto}
-  .hero>img{position:relative;width:100%;height:auto;aspect-ratio:16/9}
-  .hero::after{background:linear-gradient(0deg,var(--bg) 45%,rgba(8,7,12,0) 75%)}
-  .hero .wrap{padding-bottom:40px;margin-top:-60px}
+  .hero>img{position:relative;width:100%;height:auto;aspect-ratio:16/9;display:block}
+  .hero::after{background:linear-gradient(0deg,var(--bg) 0%,rgba(8,7,12,0) 30%);height:calc(100vw * 9 / 16)}
+  .hero .wrap{padding-bottom:40px;margin-top:24px}
+  .top{padding-top:120px}
   .how,.prod,.nlp{grid-template-columns:1fr;gap:36px}
   .g1{grid-template-columns:1fr;gap:40px}
   .sys,.learn{grid-template-columns:1fr}
+  .sys .s{min-height:0}
   .nl{flex-direction:column;align-items:flex-start;padding:32px 24px}
-  .pair{height:auto;aspect-ratio:1/1;max-width:520px}
+  /* la paire empilée : miniature, puis la fiche violette qui la chevauche un peu */
+  .pair,.prod .visual .pair{height:auto;display:flex;flex-direction:column;max-width:560px;padding-top:14px}
+  .pair .th{position:relative;top:0;width:94%;align-self:flex-end}
+  .pair .bp{position:relative;width:94%;margin-top:-28px;padding:22px}
+  .bp h3{font-size:34px}
+  .s1{top:0}
+  .pillars{height:auto;display:grid;gap:14px}
+  .pillars div{position:relative;width:auto;inset:auto!important;font-size:30px}
   .buy{position:static}
+  /* sur téléphone, le prix et le bouton passent juste sous le titre */
+  .prod>aside{order:-1}
   .right>a:not(.btn){display:none}
+}
+@media (max-width:600px){
+  h1,.top h1{font-size:40px}
+  .nlp h1{font-size:38px!important}
+  h2{font-size:32px}
+  .sub{font-size:17px}
+  .right{display:none}
+  .prod .visual .big b{font-size:44px}
+  .closer{font-size:30px}
+  .nl h2{font-size:30px}
 }
 @media (prefers-reduced-motion:no-preference){
   .k .th,.k .poster,.slip{transition:transform .25s ease}
