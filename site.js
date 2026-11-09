@@ -131,6 +131,12 @@ function mount(current, html) {
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !m.hidden) { m.hidden = true; b.setAttribute('aria-expanded', 'false'); b.focus(); } });
   }
   wireNewsletterForms();
+  /* retour du lien de confirmation de l'e-mail Podia (script ajouté dans Podia, Settings > Analytics > Third-party code) */
+  if (/[?&]confirmed=1/.test(location.search)) {
+    var ok = document.createElement('div'); ok.className = 'confirmed'; ok.setAttribute('role', 'status');
+    ok.innerHTML = '<div class="wrap"><b>Your email is confirmed.</b> Welcome to the newsletter.</div>';
+    document.body.insertBefore(ok, document.body.firstChild);
+  }
   /* hauteur de page, lue par le script de capture */
   window.addEventListener('load', function () { setTimeout(function () { var d = document.documentElement; d.setAttribute('data-h', d.scrollHeight); d.setAttribute('data-w', d.scrollWidth); }, 300); });
 }
