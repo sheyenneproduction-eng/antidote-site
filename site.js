@@ -3,7 +3,7 @@ var FONTS = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,w
 var EXT = ' target="_blank" rel="noopener"';
 var PLAY = '<i class="play"></i>';
 var SHORTYEAR = 'https://shortyear.com';
-var SWITCHER = false;
+var SWITCHER = true;
 
 function esc(x) { return String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
 function thumb(id) { return 'https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg'; }
@@ -30,7 +30,7 @@ function slipLabel(p) {
 
 function nav(current) {
   var L = [['channel', 'Videos', 'channel.html'], ['systems', 'Systems', 'library.html#systems'], ['blueprints', 'Blueprints', 'library.html#blueprints'], ['newsletter', 'Newsletter', 'newsletter.html']];
-  /* sélecteur Antidote / Shortyear validé le 11 octobre 2026, masqué à la mise en ligne à la demande de Sheyenne : passer à true pour le remettre */
+  /* sélecteur Antidote / Shortyear validé le 11 octobre 2026, masqué le 14 octobre, remis le 9 novembre à la demande de Sheyenne */
   var logo = !SWITCHER ? '<a class="sw-b" href="index.html"><i class="dot"></i>antidote</a>' :
     '<div class="sw"><button class="sw-b" id="sw-b" type="button" aria-expanded="false" aria-controls="sw-m"><i class="dot"></i>antidote' +
     '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></button>' +
