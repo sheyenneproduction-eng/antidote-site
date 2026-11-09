@@ -36,7 +36,7 @@ function nav(current) {
     '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></button>' +
     '<div class="menu" id="sw-m" hidden><small>Switch to</small>' +
     '<a class="mi on" href="index.html"><i class="dot"></i><div><b>Antidote</b><span>Book summaries, systems, and blueprints</span></div><em>✓</em></a>' +
-    '<a class="mi" href="' + SHORTYEAR + '"><i class="dot sy"></i><div><b>Shortyear</b><span>The app that turns a year into 12 weeks</span></div><em>→</em></a></div></div>';
+    '<a class="mi" href="' + SHORTYEAR + '"><i class="dot sy"></i><div><b>Shortyear</b><span>The goals planner app</span></div><em>→</em></a></div></div>';
   var items = L.map(function (l) { return '<a href="' + l[2] + '"' + (l[0] === current ? ' aria-current="page"' : '') + '>' + l[1] + '</a>'; }).join('');
   var login = PODIA + 'account/sessions/new';
   /* sur téléphone : un bouton menu qui ouvre un panneau plein écran (version A, choisie par Sheyenne le 14 octobre 2026) */
