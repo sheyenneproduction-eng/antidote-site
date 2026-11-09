@@ -23,8 +23,10 @@ function shortTitle(full) {
 function norm(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); }
 
 async function main() {
-  const res = await fetch(FEED);
-  if (!res.ok) throw new Error('Flux YouTube indisponible : ' + res.status);
+  // le flux YouTube tombe parfois quelques heures : on garde alors les vidéos connues, sans bloquer la publication
+  let res;
+  try { res = await fetch(FEED); } catch (e) { console.log('Flux YouTube injoignable, vidéos inchangées : ' + e.message); return; }
+  if (!res.ok) { console.log('Flux YouTube indisponible (' + res.status + '), vidéos inchangées.'); return; }
   const xml = await res.text();
   const entries = xml.split('<entry>').slice(1).map(e => ({
     id: (e.match(/<yt:videoId>([^<]+)</) || [])[1],
