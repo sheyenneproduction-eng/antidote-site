@@ -1,6 +1,6 @@
 /* Produits et vidéos repris de Podia et du flux YouTube (maquette du 11 septembre 2026).
    Le champ p d’une vidéo = le produit affiché dessous, décidé par Sheyenne le 11 octobre 2026. */
-var PODIA="https://shop.antidote-thechannel.com/";
+var PODIA="https://antidote.podia.com/";
 var YT_SUB="https://www.youtube.com/channel/UCQUnqaW8Q33siyLYhisN7HQ?sub_confirmation=1";
 var VIDEOS=[
  {
