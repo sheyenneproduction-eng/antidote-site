@@ -4,6 +4,14 @@ var PODIA="https://shop.antidote-thechannel.com/";
 var YT_SUB="https://www.youtube.com/channel/UCQUnqaW8Q33siyLYhisN7HQ?sub_confirmation=1";
 var VIDEOS=[
  {
+  "id": "9sOjokN0xJQ",
+  "t": "Deep Work",
+  "full": "How This MIT PhD Stops Working at 5:30 PM and Still Gets Ahead (Deep Work)",
+  "d": "2026-11-10",
+  "a": "",
+  "p": ""
+ },
+ {
   "id": "nrUQcGpEpWI",
   "t": "Never Split the Difference",
   "full": "How to Get Whatever You Want From Someone (Never Split the Difference)",
