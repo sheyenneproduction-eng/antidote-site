@@ -2,9 +2,9 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Product · Antidote</title>
-<link rel="stylesheet" href="site.css?v=14">
+<link rel="stylesheet" href="site.css?v=15">
 </head><body>
-<script src="data.js?v=14"></script><script src="site.js?v=14"></script>
+<script src="data.js?v=15"></script><script src="site.js?v=15"></script>
 <script>
 var slug = (location.search.match(/p=([\w-]+)/) || [])[1], p = bySlug(slug) || P[0], vs = videosFor(p), v = coverVideo(p);
 var CAT = { systems: 'Systems', blueprints: 'Blueprints', challenges: 'Challenges' };
@@ -19,7 +19,15 @@ var also = p.c === 'systems'
   ? '<div class="sys" style="grid-template-columns:repeat(3,1fr)">' + P.filter(function (o) { return o.c === 'systems' && o.s !== p.s; }).map(function (o) {
       return '<a class="s" href="' + productUrl(o) + '"><span class="kk">' + esc(o.k) + '</span><h3 style="font-size:30px">' + esc(o.sn) + '</h3><p>' + esc(o.h) + '</p><div class="f"><span class="pr">' + money(o.pr) + '</span><span class="btn sm g">' + (o.pr ? 'See inside' : 'Get it free') + '</span></div></a>';
     }).join('') + '</div>'
-  : '<div class="g1">' + P.filter(function (o) { return o.c === p.c && o.s !== p.s; }).slice(0, 3).map(productCard).join('') + '</div>';
+  : '<div class="g1">' + related(p).map(productCard).join('') + '</div>';
+/* 3 suggestions : même auteur d'abord, puis même catégorie, puis les autres blueprints et challenges (le challenge est seul dans sa catégorie) */
+function related(p) {
+  var pool = P.filter(function (o) { return o.s !== p.s && o.c !== 'systems'; }), out = [];
+  [function (o) { return o.by === p.by; }, function (o) { return o.c === p.c; }, function () { return true; }].forEach(function (test) {
+    pool.forEach(function (o) { if (out.length < 3 && out.indexOf(o) < 0 && test(o)) out.push(o); });
+  });
+  return out;
+}
 mount('', '<div class="top"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="library.html">Library</a><span>/</span><a href="library.html#' + (p.c === 'systems' ? 'systems' : 'blueprints') + '">' + CAT[p.c] + '</a></nav>' +
   '<div class="eyebrow" style="margin-top:26px">' + esc(p.k) + '</div><h1>' + esc(p.t) + '</h1><p class="sub">' + esc(p.by) + '</p></div></div>' +
   '<div class="wrap"><div class="prod"><div><div class="visual">' + visual + '</div>' +
