@@ -8,8 +8,8 @@ var VIDEOS=[
   "t": "Deep Work",
   "full": "How This MIT PhD Stops Working at 5:30 PM and Still Gets Ahead (Deep Work)",
   "d": "2026-11-10",
-  "a": "",
-  "p": ""
+  "a": "Cal Newport",
+  "p": "deep-work"
  },
  {
   "id": "nrUQcGpEpWI",
@@ -328,6 +328,25 @@ var P=[
   ],
   "sn": "Habits Dashboard",
   "o": 4334435
+ },
+ {
+  "s": "deep-work",
+  "c": "blueprints",
+  "k": "Blueprint",
+  "t": "Deep Work",
+  "by": "Cal Newport",
+  "pr": 0,
+  "u": "blueprint-deep-work-by-cal-newport",
+  "o": 6710504,
+  "h": "Ready to stop working late, focus for real, and still get more done than everyone else?",
+  "d": "Ready to stop working late, focus for real, and still get more done than everyone else? This blueprint breaks down the key ideas from Cal Newport’s Deep Work into a simple, structured guide. Instead of treating the book as theory, you’ll discover how its lessons apply to your everyday work: the emails that never stop, the meetings, the phone in your hand, and the evenings you spend catching up.",
+  "lt": "Inside, you’ll",
+  "l": [
+   "Understand why deep work makes you hard to replace, and why almost nobody does it",
+   "Follow the 6 steps to make deep work a habit, each with the tool that fixes it",
+   "Build your own system: deep work rhythms, rituals, concentration training, and a weekly scoreboard",
+   "Stop working at 5:30 p.m. with the shutdown ritual Cal Newport uses to end every workday"
+  ]
  },
  {
   "s": "never-split-the-difference",
