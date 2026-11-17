@@ -19,7 +19,8 @@ const MAP = {
   'newsletter': 'newsletter.html',
   'the-12-week-year-notion-planner': 'product.html?p=12-week-year'
 };
-for (const p of ctx.P) MAP[p.u] = 'product.html?p=' + p.s;
+// pas de redirection pour les produits renommés (bk) : leur ancienne adresse portait le titre du livre
+for (const p of ctx.P) if (!p.bk) MAP[p.u] = 'product.html?p=' + p.s;
 
 function page(target) {
   return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex">' +
