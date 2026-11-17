@@ -172,7 +172,7 @@ var VIDEOS=[
   "t": "The Subtle Art of Not Giving a F*ck",
   "full": "The Subtle Art of Not Giving a F*ck in 31 minutes | Animated Book Summary",
   "a": "Mark Manson",
-  "p": "the-subtle-art"
+  "p": ""
  }
 ];
 var P=[
@@ -600,24 +600,6 @@ var P=[
   ],
   "cover": "TstkLVLXuGA",
   "o": 2481772
- },
- {
-  "s": "the-subtle-art",
-  "c": "blueprints",
-  "k": "Blueprint",
-  "t": "The Subtle Art of Not Giving a F*ck",
-  "by": "Mark Manson",
-  "pr": 0,
-  "u": "blueprint-the-subtle-art-of-not-giving-a-f-ck-by-mark-manson",
-  "h": "Discover how to focus on what truly matters.",
-  "d": "Ready to stop overthinking and start taking control of your life? This actionable blueprint breaks down the key principles from The Subtle Art of Not Giving a F*ck into simple, practical steps you can use every day.",
-  "lt": "What you’ll gain",
-  "l": [
-   "Discover how to focus on what truly matters",
-   "Embrace challenges",
-   "Build a mindset for success"
-  ],
-  "o": 2480246
  },
  {
   "s": "the-laws-of-human-nature",
