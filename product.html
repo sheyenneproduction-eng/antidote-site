@@ -2,9 +2,9 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Product · Antidote</title>
-<link rel="stylesheet" href="site.css?v=17">
+<link rel="stylesheet" href="site.css?v=18">
 </head><body>
-<script src="data.js?v=17"></script><script src="site.js?v=17"></script>
+<script src="data.js?v=18"></script><script src="site.js?v=18"></script>
 <script>
 var slug = (location.search.match(/p=([\w-]+)/) || [])[1], p = bySlug(slug) || P[0], vs = videosFor(p), v = coverVideo(p);
 var CAT = { systems: 'Systems', blueprints: 'Blueprints', challenges: 'Challenges' };
@@ -29,9 +29,10 @@ function related(p) {
   return out;
 }
 mount('', '<div class="top"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="library.html">Library</a><span>/</span><a href="library.html#' + (p.c === 'systems' ? 'systems' : 'blueprints') + '">' + CAT[p.c] + '</a></nav>' +
-  '<div class="eyebrow" style="margin-top:26px">' + esc(p.k) + '</div><h1>' + esc(p.t) + '</h1><p class="sub">' + esc(p.by) + '</p></div></div>' +
+  '<div class="eyebrow" style="margin-top:26px">' + esc(p.k) + '</div><h1>' + esc(p.t) + '</h1><p class="sub">' + esc(credit(p)) + '</p></div></div>' +
   '<div class="wrap"><div class="prod"><div><div class="visual">' + visual + '</div>' +
   '<p class="desc">' + esc(p.d) + '</p>' +
+  (p.bk ? '<p class="desc" style="font-size:15px;opacity:.7;margin-top:18px">' + esc(OWN_TAKE) + '</p>' : '') +
   (p.inside ? '<div class="block"><h2>Inside this blueprint</h2><p class="desc" style="font-size:17px;margin-bottom:16px">' + esc(p.inside) + '</p><div class="chips">' + p.cats.map(function (c) { return '<span>' + esc(c) + '</span>'; }).join('') + '</div></div>' : '') +
   '<div class="block"><h2>' + esc(p.lt) + '</h2><ul class="ticks">' + p.l.map(li).join('') + '</ul></div>' +
   (p.cur ? '<div class="block"><h2>Multi-currency support</h2><div class="chips">' + p.cur.map(function (c) { return '<span>' + c + '</span>'; }).join('') + '</div></div>' : '') +

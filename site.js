@@ -72,8 +72,16 @@ function productCard(p, i) {
   return '<article class="k" data-c="' + p.c + '"><a href="' + productUrl(p) + '" aria-label="' + esc(p.t) + '">' +
     (v ? '<div class="th"><img src="' + thumb(v.id) + '" alt="" loading="lazy"></div>' : p.img ? '<div class="th"><img src="' + p.img + '" alt="" loading="lazy"></div>' : poster(p, i)) + '</a>' +
     '<a class="slip" href="' + productUrl(p) + '">' + esc(slipLabel(p)) + ' →</a>' +
-    '<h3><a href="' + productUrl(p) + '">' + esc(p.t) + '</a></h3><p>' + esc(p.by) + '</p></article>';
+    '<h3><a href="' + productUrl(p) + '">' + esc(p.t) + '</a></h3><p>' + esc(credit(p, true)) + '</p></article>';
 }
+
+/* un produit tiré d'un livre sous droits : son propre titre, le livre seulement en « inspired by » */
+function credit(p, short) {
+  if (!p.bk) return p.by;
+  if (short) return 'Inspired by ' + p.bk + ' · ' + p.by;
+  return (p.c === 'challenges' ? 'Daily challenges' : 'A workbook') + ' inspired by ' + p.bk + ', by ' + p.by;
+}
+var OWN_TAKE = 'This is my personal take on the book: original reflections and exercises, written in my own words. It does not reproduce the book, and it is not affiliated with the author or the publisher.';
 
 function systemCards() {
   return P.filter(function (p) { return p.c === 'systems'; }).map(function (p) {
