@@ -9,7 +9,7 @@ var VIDEOS=[
   "full": "How This MIT PhD Stops Working at 5:30 PM and Still Gets Ahead (Deep Work)",
   "d": "2026-11-10",
   "a": "Cal Newport",
-  "p": "deep-work"
+  "p": "focus-like-its-your-job"
  },
  {
   "id": "nrUQcGpEpWI",
@@ -17,7 +17,7 @@ var VIDEOS=[
   "full": "How to Get Whatever You Want From Someone (Never Split the Difference)",
   "d": "2026-10-13",
   "a": "Chris Voss",
-  "p": "never-split-the-difference"
+  "p": "negotiate-without-giving-in"
  },
  {
   "id": "VGU6ytrVN5c",
@@ -33,7 +33,7 @@ var VIDEOS=[
   "full": "Secrets of the Millionaire Mind | Animated Book Summary",
   "d": "2026-06-15",
   "a": "T. Harv Eker",
-  "p": "secrets-of-the-millionaire-mind"
+  "p": "fix-your-money-mindset"
  },
  {
   "id": "dw8XTxfNkNA",
@@ -41,7 +41,7 @@ var VIDEOS=[
   "full": "The 7 Habits That Will Change Your Life | Animated Book Summary",
   "d": "2026-05-11",
   "a": "Stephen R. Covey",
-  "p": "the-7-habits"
+  "p": "become-truly-effective"
  },
  {
   "id": "SaWJMC3PsmA",
@@ -73,7 +73,7 @@ var VIDEOS=[
   "full": "How to RESTART YOUR LIFE | The Mountain Is You (Animated Book Summary)",
   "d": "2025-12-10",
   "a": "Brianna Wiest",
-  "p": "the-mountain-is-you"
+  "p": "stop-getting-in-your-own-way"
  },
  {
   "id": "TstkLVLXuGA",
@@ -81,7 +81,7 @@ var VIDEOS=[
   "full": "The Art of Seduction by Robert Greene | Animated Book Summary",
   "d": "2025-11-09",
   "a": "Robert Greene",
-  "p": "the-art-of-seduction"
+  "p": "become-irresistible"
  },
  {
   "id": "sn_cnhuGUKU",
@@ -89,7 +89,7 @@ var VIDEOS=[
   "full": "Thinking, Fast and Slow by Daniel Kahneman | Animated Book Summary",
   "d": "2025-09-25",
   "a": "Daniel Kahneman",
-  "p": "thinking-fast-and-slow"
+  "p": "outsmart-your-own-brain"
  },
  {
   "id": "NPKnyFI5Wg4",
@@ -121,7 +121,7 @@ var VIDEOS=[
   "full": "How to Win Friends and INFLUENCE People (Animated Book Summary)",
   "d": "2025-05-05",
   "a": "Dale Carnegie",
-  "p": "how-to-win-friends"
+  "p": "make-people-like-you"
  },
  {
   "id": "E7w3Zn8h8AY",
@@ -129,7 +129,7 @@ var VIDEOS=[
   "full": "The Laws of Human Nature in 50 Minutes | Animated Book Summary",
   "d": "2025-04-18",
   "a": "Robert Greene",
-  "p": "the-laws-of-human-nature"
+  "p": "read-people-like-a-book"
  },
  {
   "id": "3Ai3WkzeZEc",
@@ -137,35 +137,35 @@ var VIDEOS=[
   "full": "The 48 Laws of Power by Robert Greene | Animated Book Summary",
   "d": "2025-03-21",
   "a": "Robert Greene",
-  "p": "the-48-laws-of-power"
+  "p": "play-the-power-game"
  },
  {
   "id": "X1meRsHIRmg",
   "t": "The 33 Strategies of War, Part 2",
   "full": "The 33 Strategies of War by Robert Greene | Animated Book Summary (Part 2)",
   "a": "Robert Greene",
-  "p": "the-33-strategies-of-war"
+  "p": "win-any-conflict"
  },
  {
   "id": "Il7EEz2o2Wg",
   "t": "The 33 Strategies of War",
   "full": "The 33 Strategies of War by Robert Greene | Animated Book Summary",
   "a": "Robert Greene",
-  "p": "the-33-strategies-of-war"
+  "p": "win-any-conflict"
  },
  {
   "id": "RX9lAjAdxSo",
   "t": "Mastery",
   "full": "MASTERY by Robert Greene (Animated Book Summary)",
   "a": "Robert Greene",
-  "p": "mastery"
+  "p": "from-beginner-to-master"
  },
  {
   "id": "nUgHSxOAlWw",
   "t": "The Art of Seduction, Detailed",
   "full": "The Art of Seduction by Robert Greene | Detailed Animated Book Summary",
   "a": "Robert Greene",
-  "p": "the-art-of-seduction"
+  "p": "become-irresistible"
  },
  {
   "id": "hZTt9OdKy3o",
@@ -330,7 +330,7 @@ var P=[
   "o": 4334435
  },
  {
-  "s": "deep-work",
+  "s": "focus-like-its-your-job",
   "c": "blueprints",
   "k": "Blueprint",
   "t": "Focus Like It’s Your Job",
@@ -350,7 +350,7 @@ var P=[
   ]
  },
  {
-  "s": "never-split-the-difference",
+  "s": "negotiate-without-giving-in",
   "c": "blueprints",
   "k": "Blueprint",
   "t": "Negotiate Without Giving In",
@@ -389,7 +389,7 @@ var P=[
   "o": 5986642
  },
  {
-  "s": "secrets-of-the-millionaire-mind",
+  "s": "fix-your-money-mindset",
   "c": "blueprints",
   "k": "Blueprint",
   "t": "Fix Your Money Mindset",
@@ -409,7 +409,7 @@ var P=[
   "o": 5836954
  },
  {
-  "s": "the-7-habits",
+  "s": "become-truly-effective",
   "c": "blueprints",
   "k": "Blueprint",
   "t": "Become Truly Effective",
@@ -430,7 +430,7 @@ var P=[
   "o": 5699898
  },
  {
-  "s": "the-mountain-is-you",
+  "s": "stop-getting-in-your-own-way",
   "c": "blueprints",
   "k": "Blueprint",
   "t": "Stop Getting in Your Own Way",
@@ -449,7 +449,7 @@ var P=[
   "o": 4787094
  },
  {
-  "s": "thinking-fast-and-slow",
+  "s": "outsmart-your-own-brain",
   "c": "blueprints",
   "k": "Blueprint",
   "t": "Outsmart Your Own Brain",
@@ -504,7 +504,7 @@ var P=[
   "o": 4316851
  },
  {
-  "s": "the-48-laws-of-power",
+  "s": "play-the-power-game",
   "c": "blueprints",
   "k": "Blueprint",
   "t": "Play the Power Game",
@@ -534,7 +534,7 @@ var P=[
   "o": 2971410
  },
  {
-  "s": "the-power-of-habit",
+  "s": "rewire-your-habits",
   "c": "blueprints",
   "k": "Blueprint",
   "t": "Rewire Your Habits",
@@ -554,7 +554,7 @@ var P=[
   "img": "assets/the-power-of-habit.png"
  },
  {
-  "s": "the-33-strategies-of-war",
+  "s": "win-any-conflict",
   "c": "blueprints",
   "k": "Blueprint",
   "t": "Win Any Conflict",
@@ -574,7 +574,7 @@ var P=[
   "o": 2638080
  },
  {
-  "s": "mastery",
+  "s": "from-beginner-to-master",
   "c": "blueprints",
   "k": "Blueprint",
   "t": "From Beginner to Master",
@@ -593,7 +593,7 @@ var P=[
   "o": 2515942
  },
  {
-  "s": "the-art-of-seduction",
+  "s": "become-irresistible",
   "c": "blueprints",
   "k": "Blueprint",
   "t": "Become Irresistible",
@@ -613,7 +613,7 @@ var P=[
   "o": 2481772
  },
  {
-  "s": "the-laws-of-human-nature",
+  "s": "read-people-like-a-book",
   "c": "blueprints",
   "k": "Blueprint",
   "t": "Read People Like a Book",
@@ -658,7 +658,7 @@ var P=[
   "o": 2522838
  },
  {
-  "s": "how-to-win-friends",
+  "s": "make-people-like-you",
   "c": "challenges",
   "k": "Challenge sheets",
   "t": "Make People Like You",
