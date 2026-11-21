@@ -2,21 +2,30 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Library · Antidote</title>
-<link rel="stylesheet" href="site.css?v=19">
+<link rel="stylesheet" href="site.css?v=20">
 </head><body>
-<script src="data.js?v=19"></script><script src="site.js?v=19"></script>
+<script src="data.js?v=20"></script><script src="site.js?v=20"></script>
 <script>
 var rest = P.filter(function (p) { return p.c !== 'systems'; }), free = P.filter(function (p) { return !p.pr; }).length;
-var n = { all: rest.length, blueprints: 0, challenges: 0 }; rest.forEach(function (p) { n[p.c]++; });
+// Blueprints classés par besoin (validé par Sheyenne le 21/11/2026). Un blueprint peut être dans plusieurs besoins.
+var NEEDS = [
+  ["💰", "Improve my finances", ["fix-your-money-mindset", "think-and-grow-rich"]],
+  ["🌱", "Improve my self-esteem", ["stop-getting-in-your-own-way", "become-truly-effective", "rewire-your-habits"]],
+  ["⚡", "Get more done", ["focus-like-its-your-job", "become-truly-effective", "rewire-your-habits", "from-beginner-to-master"]],
+  ["🤝", "Understand people", ["read-people-like-a-book", "master-the-art-of-human-behavior", "make-people-like-you", "become-irresistible"]],
+  ["♟️", "Stop being underestimated", ["play-the-power-game", "the-prince", "negotiate-without-giving-in", "win-any-conflict", "the-art-of-war"]],
+  ["🧠", "Stop fooling myself", ["outsmart-your-own-brain", "the-art-of-war", "the-prince"]]
+].map(function (n) { return [n[0], n[1], n[2].filter(function (s) { return bySlug(s); })]; });
 mount('', '<div class="top"><div class="wrap"><div class="eyebrow">The library</div><h1>The books you love, <em>ready to use.</em></h1>' +
   '<p class="sub">Blueprints turn one book into a plan. Systems run the parts of your life a single book can’t fix.</p></div></div>' +
   '<div class="wrap"><section id="systems"><div class="row-h"><h2>Systems</h2></div><div class="sys">' + systemCards() + '</div></section>' +
-  '<section id="blueprints"><div class="row-h"><div><h2>Blueprints</h2><div class="tabs" id="tabs">' +
-  [['all', 'All'], ['blueprints', 'Blueprints'], ['challenges', 'Challenges']].map(function (t, i) { return '<button type="button" data-f="' + t[0] + '" aria-pressed="' + (i === 0) + '">' + t[1] + '<i>' + n[t[0]] + '</i></button>'; }).join('') + '</div></div></div>' +
+  '<section id="blueprints"><div class="row-h"><div><h2>Blueprints</h2><p class="need-q">What do you want to work on?</p><div class="tabs needs" id="tabs">' +
+  '<button type="button" data-f="all" aria-pressed="true">All<i>' + rest.length + '</i></button>' +
+  NEEDS.map(function (n, i) { return '<button type="button" data-f="' + i + '" aria-pressed="false"><b aria-hidden="true">' + n[0] + '</b>' + esc(n[1]) + '<i>' + n[2].length + '</i></button>'; }).join('') + '</div></div></div>' +
   '<div class="g1" id="grid">' + rest.map(productCard).join('') + '</div></section>' + newsletterBand() + '</div>');
 document.getElementById('tabs').addEventListener('click', function (e) {
   var b = e.target.closest('button'); if (!b) return; var f = b.getAttribute('data-f');
   [].forEach.call(this.children, function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-  [].forEach.call(document.querySelectorAll('#grid .k'), function (k) { k.hidden = f !== 'all' && k.getAttribute('data-c') !== f; });
+  [].forEach.call(document.querySelectorAll('#grid .k'), function (k) { k.hidden = f !== 'all' && NEEDS[f][2].indexOf(k.getAttribute('data-s')) < 0; });
 });
 </script></body></html>

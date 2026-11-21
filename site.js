@@ -69,7 +69,7 @@ function poster(p, i, cls) {
 /* un produit dans la bibliothèque : la miniature de sa vidéo, sinon une couverture violette */
 function productCard(p, i) {
   var v = coverVideo(p);
-  return '<article class="k" data-c="' + p.c + '"><a href="' + productUrl(p) + '" aria-label="' + esc(p.t) + '">' +
+  return '<article class="k" data-c="' + p.c + '" data-s="' + p.s + '"><a href="' + productUrl(p) + '" aria-label="' + esc(p.t) + '">' +
     (v ? '<div class="th"><img src="' + thumb(v.id) + '" alt="" loading="lazy"></div>' : p.img ? '<div class="th"><img src="' + p.img + '" alt="" loading="lazy"></div>' : poster(p, i)) + '</a>' +
     '<a class="slip" href="' + productUrl(p) + '">' + esc(slipLabel(p)) + ' →</a>' +
     '<h3><a href="' + productUrl(p) + '">' + esc(p.t) + '</a></h3><p>' + esc(credit(p, true)) + '</p></article>';
