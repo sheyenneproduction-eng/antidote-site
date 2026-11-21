@@ -17,7 +17,8 @@ const MAP = {
   'challengesheets': 'library.html#blueprints',
   'challenge-sheets': 'library.html#blueprints',
   'newsletter': 'newsletter.html',
-  'the-12-week-year-notion-planner': 'product.html?p=12-week-year'
+  'the-12-week-year-notion-planner': 'product.html?p=12-week-year',
+  'the-goals-os': 'library.html#systems' // retiré de Podia le 21/11/2026
 };
 // pas de redirection pour les produits renommés (bk) : leur ancienne adresse portait le titre du livre
 for (const p of ctx.P) if (!p.bk) MAP[p.u] = 'product.html?p=' + p.s;

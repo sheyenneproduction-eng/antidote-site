@@ -65,7 +65,7 @@ var VIDEOS=[
   "full": "Atomic Habits in 30 Minutes | Animated Book Summary",
   "d": "2026-01-30",
   "a": "James Clear",
-  "p": "the-goals-os"
+  "p": ""
  },
  {
   "id": "fL6Y1hXxz1c",
@@ -176,37 +176,6 @@ var VIDEOS=[
  }
 ];
 var P=[
- {
-  "s": "the-goals-os",
-  "c": "systems",
-  "k": "Notion system",
-  "t": "Achieve Anything: The Goals OS",
-  "by": "Version 1.0",
-  "pr": 29.99,
-  "u": "the-goals-os",
-  "h": "An identity-based operating system for your life, built in Notion.",
-  "d": "An identity-based operating system for your life, built in Notion. It helps clarify who you want to become, define meaningful goals, break them into projects and tasks, build the right skills and habits, and continuously adjust through feedback.",
-  "lt": "Features",
-  "l": [
-   "Identity Board",
-   "Life Areas Overview",
-   "Goal System (long / mid / short-term)",
-   "Projects & Tasks Engine",
-   "Skills & Side Quests",
-   "Healthy Habits Tracker",
-   "Weekly Review & Feedback Loop",
-   "Gamified Progress (XP, levels, no streak guilt)",
-   "System Map (see how everything connects)",
-   "Execution Panel (know exactly what to work on today)"
-  ],
-  "inc": [
-   "Lifetime access",
-   "Free updates included",
-   "Step-by-step PDF guides"
-  ],
-  "sn": "The Goals OS",
-  "o": 4848668
- },
  {
   "s": "money-mastery-system",
   "c": "systems",
