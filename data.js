@@ -178,6 +178,7 @@ var VIDEOS=[
 var P=[
  {
   "s": "money-mastery-system",
+  "img": "assets/system-money-mastery.jpg",
   "c": "systems",
   "k": "Notion system",
   "t": "Money Mastery System",
@@ -225,10 +226,11 @@ var P=[
  },
  {
   "s": "12-week-year",
+  "img": "assets/system-12-week-planner.jpg",
   "c": "systems",
   "k": "Notion system",
   "t": "Achieve More in 12 Weeks Than Most Do in a Year",
-  "by": "Built on The 12-Week Year",
+  "by": "Inspired by The 12-Week Year",
   "pr": 19.99,
   "u": "12-weeks-year-planner",
   "h": "Plan, execute, and track your goals using the principles of The 12-Week Year.",
@@ -252,11 +254,12 @@ var P=[
    "Free updates",
    "Step-by-step PDF guide"
   ],
-  "sn": "The 12-Week Year",
+  "sn": "12-Week Planner",
   "o": 2807043
  },
  {
   "s": "habits-dashboard",
+  "img": "assets/system-habits-dashboard.jpg",
   "c": "systems",
   "k": "Notion system",
   "t": "Habits Dashboard",

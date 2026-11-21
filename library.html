@@ -2,9 +2,9 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Library · Antidote</title>
-<link rel="stylesheet" href="site.css?v=20">
+<link rel="stylesheet" href="site.css?v=21">
 </head><body>
-<script src="data.js?v=20"></script><script src="site.js?v=20"></script>
+<script src="data.js?v=21"></script><script src="site.js?v=21"></script>
 <script>
 var rest = P.filter(function (p) { return p.c !== 'systems'; }), free = P.filter(function (p) { return !p.pr; }).length;
 // L’app Shortyear, proposée sous « Productivity » (demande de Sheyenne du 21/11/2026)
@@ -25,14 +25,16 @@ var NEEDS = [
 ].map(function (n) { return [n[0], n[1], n[2].filter(function (s) { return s === SY.s || bySlug(s); })]; });
 // les Systems rangés dans un besoin n’apparaissent dans la grille que sous ce besoin (ils ont leur propre section au-dessus)
 // plus de section Systems à part (21/11/2026) : les Systems et l’app sont dans la même grille que les blueprints
-var extra = P.filter(function (p) { return p.c === 'systems'; }).concat([SY]);
+var extra = P.filter(function (p) { return p.c === 'systems'; });
 mount('', '<div class="top"><div class="wrap"><div class="eyebrow">The library</div><h1>The books you love, <em>ready to use.</em></h1>' +
   '<p class="sub">Blueprints turn one book into a plan. Systems run the parts of your life a single book can’t fix.</p></div></div>' +
   '<div class="wrap"><span id="systems"></span>' +
   '<section id="blueprints"><div class="row-h"><div><h2>Blueprints / Systems</h2><p class="need-q">What do you want to work on?</p><div class="tabs needs" id="tabs">' +
-  '<button type="button" data-f="all" aria-pressed="true">All<i>' + (rest.length + extra.length) + '</i></button>' +
+  '<button type="button" data-f="all" aria-pressed="true">All<i>' + (rest.length + extra.length + 1) + '</i></button>' +
   NEEDS.map(function (n, i) { return '<button type="button" data-f="' + i + '" aria-pressed="false"><b aria-hidden="true">' + n[0] + '</b>' + esc(n[1]) + '<i>' + n[2].length + '</i></button>'; }).join('') + '</div></div></div>' +
-  '<div class="g1" id="grid">' + rest.concat(extra).map(function (p, i) { var c = p === SY ? syCard() : productCard(p, i); return c; }).join('') + '</div></section>' + newsletterBand() + '</div>');
+  '<div class="g1" id="grid">' + [SY].concat(rest, extra).map(function (p, i) { if (p === SY) return syCard(); var c = productCard(p, i);
+    // le planner Notion est présenté comme l’alternative à l’app (option 1 du 21/11/2026)
+    return p.s === '12-week-year' ? c.replace('<p>' + esc(p.by) + '</p>', '<p>Prefer Notion? ' + esc(p.by) + '</p>') : c; }).join('') + '</div></section>' + newsletterBand() + '</div>');
 document.getElementById('tabs').addEventListener('click', function (e) {
   var b = e.target.closest('button'); if (!b) return; var f = b.getAttribute('data-f');
   [].forEach.call(this.children, function (x) { x.setAttribute('aria-pressed', String(x === b)); });
