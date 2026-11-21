@@ -2,18 +2,12 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Library · Antidote</title>
-<link rel="stylesheet" href="site.css?v=22">
+<link rel="stylesheet" href="site.css?v=23">
 </head><body>
-<script src="data.js?v=22"></script><script src="site.js?v=22"></script>
+<script src="data.js?v=23"></script><script src="site.js?v=23"></script>
 <script>
-var rest = P.filter(function (p) { return p.c !== 'systems'; }), free = P.filter(function (p) { return !p.pr; }).length;
 // L’app Shortyear, proposée sous « Productivity » (demande de Sheyenne du 21/11/2026)
-var SY = { s: 'shortyear', c: 'app' };
-function syCard() {
-  var u = SHORTYEAR + '/?ref=antidote-library';
-  return '<article class="k" data-c="app" data-s="shortyear"><a href="' + u + '"' + EXT + ' aria-label="Shortyear"><div class="th"><img src="assets/shortyear-card-v3.jpg" alt="" loading="lazy"></div></a>' +
-    '<a class="slip" href="' + u + '"' + EXT + '>Our app · Free trial →</a><h3><a href="' + u + '"' + EXT + '>Shortyear</a></h3><p>The goals planner app</p></article>';
-}
+var SY = { s: 'shortyear', c: 'app', t: 'Shortyear', img: 'assets/shortyear-card-v3.jpg', h: 'The goals app that gives every goal a deadline, with 50 ready-made challenges.' };
 // Blueprints classés par besoin (validé par Sheyenne le 21/11/2026). Un blueprint peut être dans plusieurs besoins.
 var NEEDS = [
   ["💰", "Improve my finances", ["money-mastery-system", "fix-your-money-mindset", "think-and-grow-rich"]],
@@ -23,21 +17,30 @@ var NEEDS = [
   ["♟️", "Stop being underestimated", ["play-the-power-game", "the-prince", "negotiate-without-giving-in", "win-any-conflict", "the-art-of-war"]],
   ["🧠", "Stop fooling myself", ["outsmart-your-own-brain", "the-art-of-war", "the-prince"]]
 ].map(function (n) { return [n[0], n[1], n[2].filter(function (s) { return s === SY.s || bySlug(s); })]; });
-// les Systems rangés dans un besoin n’apparaissent dans la grille que sous ce besoin (ils ont leur propre section au-dessus)
-// plus de section Systems à part (21/11/2026) : les Systems et l’app sont dans la même grille que les blueprints
-var extra = P.filter(function (p) { return p.c === 'systems'; });
+// tout dans une seule liste : l’app, les blueprints, puis les Systems (plus de section Systems à part depuis le 21/11/2026)
+var ALL = [SY].concat(P.filter(function (p) { return p.c !== 'systems'; }), P.filter(function (p) { return p.c === 'systems'; }));
+function libKind(p) { return p === SY ? 'App' : p.c === 'systems' ? 'Notion system' : p.c === 'challenges' ? 'Challenge' : p.k === 'Premium blueprint' ? 'Premium blueprint' : 'Blueprint'; }
+function libCost(p) { return p === SY ? 'Free trial' : p.pr ? money(p.pr) : 'Free'; }
+function libImg(p) { if (p.img) return p.img; var v = coverVideo(p); return v ? thumb(v.id) : ''; }
+// mise en page C en violet (choisie par Sheyenne le 21/11/2026) : le menu « I want to » à gauche, une fiche par produit
+function fiche(p) {
+  var sy = p === SY, u = sy ? SHORTYEAR + '/?ref=antidote-library' : productUrl(p), x = sy ? EXT : '';
+  // le planner Notion est présenté comme l’alternative à l’app (option 1 du 21/11/2026)
+  var h = (p.s === '12-week-year' ? 'Prefer Notion? ' : '') + (p.h || '');
+  return '<article class="fc" data-s="' + p.s + '"><a class="fc-im" href="' + u + '"' + x + ' aria-hidden="true" tabindex="-1"><img src="' + libImg(p) + '" alt="" loading="lazy"></a>' +
+    '<div><span class="fc-k">' + libKind(p) + ' · ' + libCost(p) + '</span><h3><a href="' + u + '"' + x + '>' + esc(p.c === 'systems' ? p.sn : p.t) + '</a></h3><p>' + esc(h) + '</p>' +
+    '<a class="fc-go" href="' + u + '"' + x + '>' + (sy ? 'Try it free' : 'See inside') + ' →</a></div></article>';
+}
 mount('', '<div class="top"><div class="wrap"><div class="eyebrow">The library</div><h1>The books you love, <em>ready to use.</em></h1>' +
   '<p class="sub">Blueprints turn one book into a plan. Systems run the parts of your life a single book can’t fix.</p></div></div>' +
-  '<div class="wrap"><span id="systems"></span>' +
-  '<section id="blueprints"><div class="row-h"><div><h2>Blueprints / Systems</h2><p class="need-q">What do you want to work on?</p><div class="tabs needs" id="tabs">' +
-  '<button type="button" data-f="all" aria-pressed="true">All<i>' + (rest.length + extra.length + 1) + '</i></button>' +
-  NEEDS.map(function (n, i) { return '<button type="button" data-f="' + i + '" aria-pressed="false"><b aria-hidden="true">' + n[0] + '</b>' + esc(n[1]) + '<i>' + n[2].length + '</i></button>'; }).join('') + '</div></div></div>' +
-  '<div class="g1" id="grid">' + [SY].concat(rest, extra).map(function (p, i) { if (p === SY) return syCard(); var c = productCard(p, i);
-    // le planner Notion est présenté comme l’alternative à l’app (option 1 du 21/11/2026)
-    return p.s === '12-week-year' ? c.replace('<p>' + esc(p.by) + '</p>', '<p>Prefer Notion? ' + esc(p.by) + '</p>') : c; }).join('') + '</div></section>' + newsletterBand() + '</div>');
+  '<div class="wrap"><span id="systems"></span><section id="blueprints"><h2 class="lib-h">Blueprints / Systems</h2><div class="lib">' +
+  '<nav class="lib-side" id="tabs" aria-label="What do you want to work on?"><div class="lib-q">I want to</div>' +
+  '<button type="button" data-f="all" aria-pressed="true">📚 See everything<i>' + ALL.length + '</i></button>' +
+  NEEDS.map(function (n, i) { return '<button type="button" data-f="' + i + '" aria-pressed="false">' + n[0] + ' ' + esc(n[1]) + '<i>' + n[2].length + '</i></button>'; }).join('') +
+  '</nav><div class="lib-list" id="grid">' + ALL.map(fiche).join('') + '</div></div></section>' + newsletterBand() + '</div>');
 document.getElementById('tabs').addEventListener('click', function (e) {
   var b = e.target.closest('button'); if (!b) return; var f = b.getAttribute('data-f');
-  [].forEach.call(this.children, function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-  [].forEach.call(document.querySelectorAll('#grid .k'), function (k) { k.hidden = f !== 'all' && NEEDS[f][2].indexOf(k.getAttribute('data-s')) < 0; });
+  [].forEach.call(this.querySelectorAll('button'), function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+  [].forEach.call(document.querySelectorAll('#grid .fc'), function (k) { k.hidden = f !== 'all' && NEEDS[f][2].indexOf(k.getAttribute('data-s')) < 0; });
 });
 </script></body></html>

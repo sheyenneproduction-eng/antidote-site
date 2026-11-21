@@ -256,3 +256,31 @@ footer a:hover{color:var(--tx)}
 .tabs.needs{margin-top:12px}
 .tabs.needs button b{font-weight:400;margin-right:7px}
 #blueprints .row-h>div{min-width:0;max-width:100%}
+
+/* bibliothèque, mise en page C en violet (21/11/2026) : menu « I want to » à gauche, une fiche par produit */
+.lib-h{font:800 56px/1 var(--disp);letter-spacing:-.035em;margin:0 0 34px}
+.lib{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:start}
+.lib-side{position:sticky;top:20px;display:grid;gap:6px}
+.lib-q{font:600 14px var(--body);color:var(--tx3);padding:0 16px 6px;letter-spacing:.06em;text-transform:uppercase}
+.lib-side button{display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:14px;border:0;background:none;cursor:pointer;text-align:left;font:600 17px var(--body);color:var(--tx2)}
+.lib-side button:hover{background:rgba(255,255,255,.05);color:var(--tx)}
+.lib-side button i{font-style:normal;margin-left:auto;color:var(--tx3);font-size:14px}
+.lib-side button[aria-pressed="true"]{background:linear-gradient(120deg,#7C5CFF,#4A32B8);color:#fff}
+.lib-side button[aria-pressed="true"] i{color:rgba(255,255,255,.8)}
+.lib-list{display:grid;gap:18px}
+.fc{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:center;border-radius:18px;padding:14px;background:linear-gradient(120deg,#7C5CFF 0%,#4A32B8 55%,#2A1C6E 100%);box-shadow:0 30px 60px -30px rgba(124,92,255,.55)}
+.fc-im img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block}
+.fc-k{font:700 12px var(--body);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.fc h3{font:700 26px/1.15 var(--disp);letter-spacing:-.02em;margin:8px 0 6px;color:#fff}
+.fc p{margin:0;color:rgba(255,255,255,.88);font-size:16.5px;line-height:1.45}
+.fc-go{display:inline-block;margin-top:14px;font:600 15px var(--body);color:#0B0A10;background:#fff;border-radius:999px;padding:9px 18px}
+@media (max-width:900px){
+  .lib-h{font-size:40px;margin-bottom:22px}
+  .lib{grid-template-columns:1fr;gap:22px}
+  .lib-side{position:static;display:flex;flex-wrap:wrap;gap:8px}
+  .lib-q{display:none}
+  .lib-side button{padding:10px 14px;font-size:15px;background:rgba(255,255,255,.06)}
+  .lib-side button i{margin-left:6px}
+  .fc{grid-template-columns:1fr;gap:14px}
+  .fc h3{font-size:22px}
+}
