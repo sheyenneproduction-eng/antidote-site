@@ -609,7 +609,7 @@ var P=[
   "by": "Transform your relationships and achieve your goals",
   "pr": 19.99,
   "u": "premium-blueprint-human-nature",
-  "vid": "the-laws-of-human-nature",
+  "vid": "read-people-like-a-book",
   "h": "A hands-on workshop: 21 lessons covering 18 laws of human nature, in video.",
   "d": "A hands-on workshop that guides you through applying the laws of human nature to real-life situations. It’s designed to help you take action, not just absorb information.",
   "lt": "What’s included",
