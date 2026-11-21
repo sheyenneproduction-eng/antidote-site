@@ -29,7 +29,7 @@ var extra = [SY].concat(P).filter(function (p) { return p.c !== 'blueprints' && 
 mount('', '<div class="top"><div class="wrap"><div class="eyebrow">The library</div><h1>The books you love, <em>ready to use.</em></h1>' +
   '<p class="sub">Blueprints turn one book into a plan. Systems run the parts of your life a single book can’t fix.</p></div></div>' +
   '<div class="wrap"><section id="systems"><div class="row-h"><h2>Systems</h2></div><div class="sys">' + systemCards() + '</div></section>' +
-  '<section id="blueprints"><div class="row-h"><div><h2>Blueprints</h2><p class="need-q">What do you want to work on?</p><div class="tabs needs" id="tabs">' +
+  '<section id="blueprints"><div class="row-h"><div><h2>Blueprints / Systems</h2><p class="need-q">What do you want to work on?</p><div class="tabs needs" id="tabs">' +
   '<button type="button" data-f="all" aria-pressed="true">All<i>' + rest.length + '</i></button>' +
   NEEDS.map(function (n, i) { return '<button type="button" data-f="' + i + '" aria-pressed="false"><b aria-hidden="true">' + n[0] + '</b>' + esc(n[1]) + '<i>' + n[2].length + '</i></button>'; }).join('') + '</div></div></div>' +
   '<div class="g1" id="grid">' + rest.concat(extra).map(function (p, i) { var c = p === SY ? syCard() : productCard(p, i); return p.c === 'systems' || p === SY ? c.replace('<article ', '<article hidden ') : c; }).join('') + '</div></section>' + newsletterBand() + '</div>');
