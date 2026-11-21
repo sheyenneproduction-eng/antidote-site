@@ -226,7 +226,7 @@ var P=[
  },
  {
   "s": "12-week-year",
-  "img": "assets/system-12-week-planner.jpg",
+  "img": "assets/system-12-week-planner-v2.jpg",
   "c": "systems",
   "k": "Notion system",
   "t": "Achieve More in 12 Weeks Than Most Do in a Year",
