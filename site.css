@@ -288,3 +288,9 @@ footer a:hover{color:var(--tx)}
 .fc-im{position:relative;display:block}
 .fc-slip{position:absolute;left:-10px;bottom:-16px;margin:0;background:#fff;color:#4A32B8}
 @media (max-width:900px){.fc>div{padding-top:14px}}
+/* bibliothèque : l'en-tête raccourci pour arriver plus vite aux produits (21/11/2026) */
+.top.top-sm{padding-top:112px;overflow:visible}
+.top.top-sm h1{font-size:54px;max-width:none;margin-top:10px}
+.top.top-sm .sub{font-size:17px;margin-top:12px;max-width:60ch}
+.top.top-sm + .wrap #blueprints{padding-top:44px}
+@media (max-width:900px){.top.top-sm h1{font-size:38px}.top.top-sm + .wrap #blueprints{padding-top:32px}}
