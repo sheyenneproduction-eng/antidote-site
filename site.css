@@ -294,3 +294,6 @@ footer a:hover{color:var(--tx)}
 .top.top-sm .sub{font-size:17px;margin-top:12px;max-width:60ch}
 .top.top-sm + .wrap #blueprints{padding-top:44px}
 @media (max-width:900px){.top.top-sm h1{font-size:38px}.top.top-sm + .wrap #blueprints{padding-top:32px}}
+/* bibliothèque sans en-tête (22/11/2026) : le titre Blueprints / Systems ouvre la page */
+.lib-page #blueprints{padding-top:118px}
+@media (max-width:900px){.lib-page #blueprints{padding-top:96px}}

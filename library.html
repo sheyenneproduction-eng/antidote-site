@@ -2,9 +2,9 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Library · Antidote</title>
-<link rel="stylesheet" href="site.css?v=26">
+<link rel="stylesheet" href="site.css?v=27">
 </head><body>
-<script src="data.js?v=26"></script><script src="site.js?v=26"></script>
+<script src="data.js?v=27"></script><script src="site.js?v=27"></script>
 <script>
 // L’app Shortyear, proposée sous « Productivity » (demande de Sheyenne du 21/11/2026)
 var SY = { s: 'shortyear', c: 'app', t: 'Shortyear', img: 'assets/shortyear-card-v3.jpg', h: 'The goals app that gives every goal a deadline, with 50 ready-made challenges.' };
@@ -31,9 +31,8 @@ function fiche(p) {
     '<div><h3><a href="' + u + '"' + x + '>' + esc(p.c === 'systems' ? p.sn : p.t) + '</a></h3><p>' + esc(h) + '</p>' +
     '<a class="fc-go" href="' + u + '"' + x + '>' + (sy ? 'Try it free' : 'See inside') + ' →</a></div></article>';
 }
-mount('', '<div class="top top-sm"><div class="wrap"><div class="eyebrow">The library</div><h1>The books you love, <em>ready to use.</em></h1>' +
-  '<p class="sub">Blueprints turn one book into a plan. Systems run the parts of your life a single book can’t fix.</p></div></div>' +
-  '<div class="wrap"><span id="systems"></span><section id="blueprints"><h2 class="lib-h">Blueprints / Systems</h2><div class="lib">' +
+mount('', '' +
+  '<div class="wrap lib-page"><span id="systems"></span><section id="blueprints"><h2 class="lib-h">Blueprints / Systems</h2><div class="lib">' +
   '<nav class="lib-side" id="tabs" aria-label="What do you want to work on?"><div class="lib-q">I want to</div>' +
   '<button type="button" data-f="all" aria-pressed="true">📚 See everything<i>' + ALL.length + '</i></button>' +
   NEEDS.map(function (n, i) { return '<button type="button" data-f="' + i + '" aria-pressed="false">' + n[0] + ' ' + esc(n[1]) + '<i>' + n[2].length + '</i></button>'; }).join('') +
