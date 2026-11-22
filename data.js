@@ -225,39 +225,6 @@ var P=[
   "o": 3256618
  },
  {
-  "s": "12-week-year",
-  "img": "assets/system-12-week-planner-v2.jpg",
-  "c": "systems",
-  "k": "Notion system",
-  "t": "Achieve More in 12 Weeks Than Most Do in a Year",
-  "by": "Inspired by The 12-Week Year",
-  "pr": 19.99,
-  "u": "12-weeks-year-planner",
-  "h": "Plan, execute, and track your goals using the principles of The 12-Week Year.",
-  "d": "A Notion-based system designed to help you plan, execute, and track goals using principles from The 12-Week Year. It includes goal-setting frameworks, weekly planning tools, progress tracking, and guided reflection.",
-  "lt": "Features",
-  "l": [
-   "Pre-built structure, no setup from scratch",
-   "Automated progress tracking across connected goals, tactics, and tasks",
-   "Step-by-step guidance with reflection prompts",
-   "Mindset clarity section for motivation realignment",
-   "Vision assessment across life areas",
-   "SMART goal-setting system with challenge anticipation",
-   "Integrated tactics and tasks with automatic progress updates",
-   "Weekly planning with automated scorecard",
-   "13th week for reflection and after-action review",
-   "Blank template for future 12-week cycles",
-   "Bonus: visual mind map of the 12-Week Year framework"
-  ],
-  "inc": [
-   "Lifetime access",
-   "Free updates",
-   "Step-by-step PDF guide"
-  ],
-  "sn": "12-Week Planner",
-  "o": 2807043
- },
- {
   "s": "habits-dashboard",
   "img": "assets/system-habits-dashboard.jpg",
   "c": "systems",

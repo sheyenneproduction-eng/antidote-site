@@ -160,7 +160,7 @@ function fiche(p, ref) {
   // le planner Notion est présenté comme l’alternative à l’app (option 1 du 21/11/2026)
   // le livre d’origine sous le titre (22/11/2026) : « Inspired by … » si le produit a été renommé, sinon l’auteur
   var by = sy || p.c === 'systems' ? '' : p.s === 'master-the-art-of-human-behavior' ? 'Inspired by The Laws of Human Nature · Robert Greene' : p.bk ? credit(p, true) : (p.by && p.by.length < 30 ? p.by : '');
-  var h = (p.s === '12-week-year' ? 'Prefer Notion? ' : '') + (p.h || '');
+  var h = p.h || '';
   return '<article class="fc" data-s="' + p.s + '"><a class="fc-im" href="' + u + '"' + x + ' aria-hidden="true" tabindex="-1"><img src="' + libImg(p) + '" alt="" loading="lazy"><span class="slip fc-slip">' + esc(sy ? 'Our app · Free trial' : slipLabel(p)) + ' →</span></a>' +
     '<div><h3><a href="' + u + '"' + x + '>' + esc(p.c === 'systems' ? p.sn : p.t) + '</a></h3>' + (by ? '<div class="fc-by">' + esc(by) + '</div>' : '') + '<p>' + esc(h) + '</p>' +
     '<a class="fc-go" href="' + u + '"' + x + '>' + (sy ? 'Try it free' : 'See inside') + ' →</a></div></article>';

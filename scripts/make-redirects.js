@@ -17,7 +17,9 @@ const MAP = {
   'challengesheets': 'library.html#blueprints',
   'challenge-sheets': 'library.html#blueprints',
   'newsletter': 'newsletter.html',
-  'the-12-week-year-notion-planner': 'product.html?p=12-week-year',
+  // planner retiré du site le 22/11/2026 : ses anciens liens (newsletter, YouTube) mènent à Shortyear
+  'the-12-week-year-notion-planner': 'https://shortyear.com/?ref=antidote-planner',
+  '12-weeks-year-planner': 'https://shortyear.com/?ref=antidote-planner',
   'the-goals-os': 'library.html#systems' // retiré de Podia le 21/11/2026
 };
 // pas de redirection pour les produits renommés (bk) : leur ancienne adresse portait le titre du livre
@@ -37,7 +39,7 @@ for (const [from, to] of Object.entries(MAP)) {
   const depth = from.split('/').length;
   const dir = path.join(ROOT, from);
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), page('../'.repeat(depth) + to));
+  fs.writeFileSync(path.join(dir, 'index.html'), page(/^https?:/.test(to) ? to : '../'.repeat(depth) + to));
   n++;
 }
 
