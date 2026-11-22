@@ -150,7 +150,7 @@ function mount(current, html) {
 }
 
 /* les fiches violettes (page Library et accueil, 22/11/2026) et l’app Shortyear */
-var SY = { s: 'shortyear', c: 'app', t: 'Shortyear', img: 'assets/shortyear-card-v5.jpg', h: 'The goals app that gives every goal a deadline, with 50 ready-made challenges.' };
+var SY = { s: 'shortyear', c: 'app', t: 'Shortyear', img: 'assets/shortyear-card-v6.jpg', h: 'The goals app that gives every goal a deadline, with 50 ready-made challenges.' };
 function libKind(p) { return p === SY ? 'App' : p.c === 'systems' ? 'Notion system' : p.c === 'challenges' ? 'Challenge' : p.k === 'Premium blueprint' ? 'Premium blueprint' : 'Blueprint'; }
 function libCost(p) { return p === SY ? 'Free trial' : p.pr ? money(p.pr) : 'Free'; }
 function libImg(p) { if (p.img) return p.img; var v = coverVideo(p); return v ? thumb(v.id) : ''; }
