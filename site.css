@@ -297,3 +297,5 @@ footer a:hover{color:var(--tx)}
 /* bibliothèque sans en-tête (22/11/2026) : le titre Blueprints / Systems ouvre la page */
 .lib-page #blueprints{padding-top:118px}
 @media (max-width:900px){.lib-page #blueprints{padding-top:96px}}
+/* le livre d'origine sous le titre des fiches (22/11/2026) */
+.fc .fc-by{font:600 14px var(--body);color:rgba(255,255,255,.72);margin:-2px 0 8px}
