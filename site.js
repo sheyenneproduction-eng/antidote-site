@@ -148,3 +148,18 @@ function mount(current, html) {
   /* hauteur de page, lue par le script de capture */
   window.addEventListener('load', function () { setTimeout(function () { var d = document.documentElement; d.setAttribute('data-h', d.scrollHeight); d.setAttribute('data-w', d.scrollWidth); }, 300); });
 }
+
+/* les fiches violettes (page Library et accueil, 22/11/2026) et l’app Shortyear */
+var SY = { s: 'shortyear', c: 'app', t: 'Shortyear', img: 'assets/shortyear-card-v4.jpg', h: 'The goals app that gives every goal a deadline, with 50 ready-made challenges.' };
+function libKind(p) { return p === SY ? 'App' : p.c === 'systems' ? 'Notion system' : p.c === 'challenges' ? 'Challenge' : p.k === 'Premium blueprint' ? 'Premium blueprint' : 'Blueprint'; }
+function libCost(p) { return p === SY ? 'Free trial' : p.pr ? money(p.pr) : 'Free'; }
+function libImg(p) { if (p.img) return p.img; var v = coverVideo(p); return v ? thumb(v.id) : ''; }
+// mise en page C en violet (choisie par Sheyenne le 21/11/2026) : le menu « I want to » à gauche, une fiche par produit
+function fiche(p, ref) {
+  var sy = p === SY, u = sy ? SHORTYEAR + '/?ref=' + (ref || 'antidote-library') : productUrl(p), x = sy ? EXT : '';
+  // le planner Notion est présenté comme l’alternative à l’app (option 1 du 21/11/2026)
+  var h = (p.s === '12-week-year' ? 'Prefer Notion? ' : '') + (p.h || '');
+  return '<article class="fc" data-s="' + p.s + '"><a class="fc-im" href="' + u + '"' + x + ' aria-hidden="true" tabindex="-1"><img src="' + libImg(p) + '" alt="" loading="lazy"><span class="slip fc-slip">' + esc(sy ? 'Our app · Free trial' : slipLabel(p)) + ' →</span></a>' +
+    '<div><h3><a href="' + u + '"' + x + '>' + esc(p.c === 'systems' ? p.sn : p.t) + '</a></h3><p>' + esc(h) + '</p>' +
+    '<a class="fc-go" href="' + u + '"' + x + '>' + (sy ? 'Try it free' : 'See inside') + ' →</a></div></article>';
+}
