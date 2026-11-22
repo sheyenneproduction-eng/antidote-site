@@ -24,5 +24,5 @@ mount('', '<div class="hero"><img src="' + thumb(f.id) + '" alt=""><div class="w
   '<a class="bp" href="' + productUrl(pp) + '"><span class="step">2 · Use it</span><small>' + esc(slipLabel(pp)) + '</small><h3>' + esc(pp.t) + '</h3><ul>' + pp.l.slice(0, 3).map(function (x) { return '<li>' + esc(Array.isArray(x) ? x[0] : x) + '</li>'; }).join('') + '</ul></a></div></section>' +
   '<section><div class="row-h"><h2>The books</h2><a class="more" href="channel.html">All videos →</a></div><div class="g1">' + VIDEOS.slice(0, 9).map(videoCard).join('') + '</div></section>' +
   '<section><div class="row-h"><h2>Systems that run it for you</h2><a class="more" href="library.html">All ' + P.length + ' products →</a></div><div class="sys">' + systemCards() + '</div></section>' +
-  newsletterBand() + '</div>');
+  '</div>');
 </script></body></html>
