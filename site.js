@@ -29,7 +29,7 @@ function slipLabel(p) {
 }
 
 function nav(current) {
-  var L = [['channel', 'Videos', 'channel.html'], ['systems', 'Systems', 'library.html#systems'], ['blueprints', 'Blueprints', 'library.html#blueprints'], ['newsletter', 'Newsletter', 'newsletter.html']];
+  var L = [['channel', 'Videos', 'channel.html'], ['blueprints', 'Blueprints / Systems', 'library.html#blueprints'], ['newsletter', 'Newsletter', 'newsletter.html']];
   /* sélecteur Antidote / Shortyear validé le 11 octobre 2026, masqué le 14 octobre, remis le 9 novembre à la demande de Sheyenne */
   var logo = !SWITCHER ? '<a class="sw-b" href="index.html"><i class="dot"></i>antidote</a>' :
     '<div class="sw"><button class="sw-b" id="sw-b" type="button" aria-expanded="false" aria-controls="sw-m"><i class="dot"></i>antidote' +

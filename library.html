@@ -2,9 +2,9 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Library · Antidote</title>
-<link rel="stylesheet" href="site.css?v=25">
+<link rel="stylesheet" href="site.css?v=26">
 </head><body>
-<script src="data.js?v=25"></script><script src="site.js?v=25"></script>
+<script src="data.js?v=26"></script><script src="site.js?v=26"></script>
 <script>
 // L’app Shortyear, proposée sous « Productivity » (demande de Sheyenne du 21/11/2026)
 var SY = { s: 'shortyear', c: 'app', t: 'Shortyear', img: 'assets/shortyear-card-v3.jpg', h: 'The goals app that gives every goal a deadline, with 50 ready-made challenges.' };
@@ -28,7 +28,7 @@ function fiche(p) {
   // le planner Notion est présenté comme l’alternative à l’app (option 1 du 21/11/2026)
   var h = (p.s === '12-week-year' ? 'Prefer Notion? ' : '') + (p.h || '');
   return '<article class="fc" data-s="' + p.s + '"><a class="fc-im" href="' + u + '"' + x + ' aria-hidden="true" tabindex="-1"><img src="' + libImg(p) + '" alt="" loading="lazy"><span class="slip fc-slip">' + esc(sy ? 'Our app · Free trial' : slipLabel(p)) + ' →</span></a>' +
-    '<div><span class="fc-k">' + libKind(p) + ' · ' + libCost(p) + '</span><h3><a href="' + u + '"' + x + '>' + esc(p.c === 'systems' ? p.sn : p.t) + '</a></h3><p>' + esc(h) + '</p>' +
+    '<div><h3><a href="' + u + '"' + x + '>' + esc(p.c === 'systems' ? p.sn : p.t) + '</a></h3><p>' + esc(h) + '</p>' +
     '<a class="fc-go" href="' + u + '"' + x + '>' + (sy ? 'Try it free' : 'See inside') + ' →</a></div></article>';
 }
 mount('', '<div class="top top-sm"><div class="wrap"><div class="eyebrow">The library</div><h1>The books you love, <em>ready to use.</em></h1>' +
