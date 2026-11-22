@@ -305,7 +305,7 @@ var P=[
   "s": "focus-like-its-your-job",
   "c": "blueprints",
   "k": "Blueprint",
-  "t": "Focus Like It’s Your Job",
+  "t": "Stop Getting Distracted",
   "bk": "Deep Work",
   "by": "Cal Newport",
   "pr": 0,
